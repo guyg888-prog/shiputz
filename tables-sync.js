@@ -13,6 +13,25 @@
   let queue = Promise.resolve();
   let lastLocalEdit = 0;
   let warned = false;
+  let starting = false;
+  let lastError = '';
+  function showSyncError(error) {
+    lastError = String(error?.message || error);
+    let panel = document.getElementById('renovationSyncError');
+    if (!panel) {
+      panel = document.createElement('div');
+      panel.id = 'renovationSyncError';
+      panel.setAttribute('dir','rtl');
+      panel.style.cssText = 'position:fixed;bottom:20px;left:20px;right:20px;max-width:530px;margin:auto;z-index:999999;background:#18262d;color:white;padding:18px;border:1px solid #f59e0b;border-radius:14px;box-shadow:0 8px 32px #0008;font:15px Arial,sans-serif;line-height:1.6';
+      panel.innerHTML = '<strong>הסנכרון לענן לא הושלם</strong><p id="syncErrorText" style="overflow-wrap:anywhere"></p><p style="font-size:12px">הנתונים המקומיים לא נמחקו. אפשר להעתיק את השגיאה ולשלוח אותה לבדיקה.</p><button id="syncCopyError" style="padding:9px;margin:4px">העתקת השגיאה</button><button id="syncRetry" style="padding:9px;margin:4px">נסה שוב</button><button id="syncDismiss" style="padding:9px;margin:4px">סגור</button>';
+      document.body.appendChild(panel);
+      panel.querySelector('#syncCopyError').onclick = () => navigator.clipboard?.writeText(lastError);
+      panel.querySelector('#syncRetry').onclick = () => { panel.remove(); start(); };
+      panel.querySelector('#syncDismiss').onclick = () => panel.remove();
+    }
+    panel.querySelector('#syncErrorText').textContent = lastError;
+    panel.style.display = 'block';
+  }
 
   async function api(method, body, query = '?key=eq.' + encodeURIComponent(ROW_KEY)) {
     const res = await fetch(URL + query, {
@@ -85,6 +104,8 @@
   };
 
   async function start() {
+    if (starting) return;
+    starting = true;
     try {
       const rows = await api('GET');
       if (rows.length && valid(rows[0].value)) {
@@ -114,8 +135,10 @@
       console.warn('Shared tables unavailable:', e);
       if (!warned) {
         warned = true;
-        notice('הטבלאות עדיין מקומיות. נדרשת הרשאת Supabase לשיתוף');
+        showSyncError(e);
       }
+    } finally {
+      starting = false;
     }
   }
   start();
