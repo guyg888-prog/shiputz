@@ -13,8 +13,9 @@
     del: window.dbDelete
   };
 
-  let session = null;
+  let session = { access_token: KEY, user: { id: 'public' } };
   let cache = null;
+  let cacheTime = 0;
 
   const sessionKey = 'beit-cloud-session';
 
@@ -205,7 +206,7 @@
   async function cloudAll() {
     if (!session) return original.all();
 
-    if (cache) return cache;
+    if (cache && Date.now() - cacheTime < 20 * 60 * 1000) return cache;
 
     const rows = await authRequest(
       BASE + '/rest/v1/renovation_media?select=*&order=updated_at.asc'
@@ -227,6 +228,7 @@
       }))
     );
 
+    cacheTime = Date.now();
     return cache;
   }
 
@@ -247,6 +249,8 @@
 
   async function upload(data, id) {
     const blob = asBlob(data);
+    if (blob.size > 8 * 1024 * 1024) throw Error('התמונה גדולה מ-8MB');
+    if (!['image/jpeg','image/png','image/webp'].includes(blob.type)) throw Error('סוג קובץ לא נתמך');
 
     const extension =
       blob.type === 'image/png'
@@ -281,9 +285,7 @@
   }
 
   async function cloudPut(item) {
-    if (!session) {
-      throw Error('יש להתחבר כדי לשמור תמונות');
-    }
+    if (!session) throw Error('שירות הענן אינו זמין');
 
     const validUUID =
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -327,6 +329,7 @@
     );
 
     cache = null;
+    cacheTime = 0;
   }
 
   async function cloudDelete(id) {
@@ -362,6 +365,7 @@
     }
 
     cache = null;
+    cacheTime = 0;
   }
 
   window.dbAll = cloudAll;
@@ -501,7 +505,7 @@
 
       if (!local.length) return;
 
-      const flag = 'beit-cloud-imported-' + session.user.id;
+      const flag = 'beit-cloud-imported-public-v1';
 
       if (localStorage.getItem(flag)) return;
 
@@ -548,47 +552,14 @@
 
   async function init() {
     try {
-      const saved = sessionStorage.getItem(sessionKey);
-
-      if (saved) {
-        session = JSON.parse(saved);
-      }
-
-      if (session) {
-        try {
-          await checkMember();
-
-          status('☁ מחובר לענן · ' + session.user.email);
-
-          render();
-          migrate();
-          return;
-
-        } catch (error) {
-          if (await renew()) {
-            try {
-              await checkMember();
-
-              status('☁ מחובר לענן · ' + session.user.email);
-
-              render();
-              migrate();
-              return;
-
-            } catch {
-              // Continue to login
-            }
-          }
-
-          session = null;
-        }
-      }
-
-      status('☁ התחברות לענן');
-      login();
-
+      await cloudAll();
+      status('☁ תמונות משותפות בענן');
+      if (typeof render === 'function') render();
+      migrate();
     } catch (error) {
-      login(error.message);
+      console.error('Shared media connection:', error);
+      status('⚠ שגיאה בחיבור לענן');
+      alert('לא ניתן לטעון את ספריית התמונות המשותפת: ' + error.message);
     }
   }
 
