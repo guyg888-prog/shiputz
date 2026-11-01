@@ -103,7 +103,7 @@
   function headers() {
     return {
       apikey: KEY,
-      Authorization: 'Bearer ' + session.access_token
+      Authorization: undefined
     };
   }
 
