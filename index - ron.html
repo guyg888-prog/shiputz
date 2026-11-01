@@ -1,0 +1,569 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>בית גירשביץ׳ | פרויקט השיפוץ</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{font-family:Arial,'Helvetica Neue',sans-serif;color:#26332e;background:#f5f4ef}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{display:flex;min-height:100vh}.side{width:245px;background:#e9ede5;padding:30px 18px;position:sticky;top:0;height:100vh;border-left:1px solid #d9dfd5}.brand{font-size:25px;font-weight:750;margin-bottom:8px}.sub{color:#758078;font-size:13px}.nav{margin-top:40px;display:grid;gap:8px}.nav button{border:0;background:transparent;text-align:right;padding:14px 16px;border-radius:12px;color:#4b5950}.nav button.active{background:#fff;color:#233e2f;font-weight:700}.main{flex:1;min-width:0;padding:36px 5vw 80px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px}.eyebrow{color:#738275;font-size:13px}.h1{font-size:34px;font-weight:750;margin:8px 0 10px}.lead{color:#738075;margin:0}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:1px solid #d3dcd1;background:white;padding:11px 17px;border-radius:11px;color:#33493a}.btn.primary{background:#2c4a39;color:white;border-color:#2c4a39}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:30px 0}.stat{background:#fff;border:1px solid #e5e9e2;border-radius:16px;padding:20px}.stat .num{font-size:30px;font-weight:750;margin:9px 0}.stat .lbl{color:#748078;font-size:13px}.section-title{display:flex;justify-content:space-between;align-items:center;margin:34px 0 16px}.section-title h2{font-size:21px;margin:0}.rooms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.room{background:#fff;border:1px solid #e4e8e0;border-radius:17px;overflow:hidden;text-align:right;padding:0;transition:transform .2s,box-shadow .2s}.room:hover{transform:translateY(-3px);box-shadow:0 12px 24px #203a2812}.art{height:145px;display:flex;align-items:center;justify-content:center;font-size:52px;background:linear-gradient(125deg,#d8dfd1,#f2e9db)}.room:nth-child(3n+2) .art{background:linear-gradient(125deg,#e6dbd0,#f4f0e7)}.room:nth-child(3n+3) .art{background:linear-gradient(125deg,#d5dcd8,#e6e7db)}.room-body{padding:17px}.room-name{font-weight:700;font-size:18px}.room-meta{font-size:13px;color:#819086;margin-top:8px}.pill{display:inline-block;background:#edf1e9;border-radius:20px;padding:5px 9px;font-size:12px;color:#56705c;margin-top:12px}.panel{background:#fff;border:1px solid #e5e9e2;border-radius:16px;padding:20px;margin-top:18px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.filters input,.filters select{background:white;border:1px solid #d7ded6;border-radius:10px;padding:11px 12px;min-width:150px}.filters input{flex:1}.tablewrap{overflow:auto;background:white;border:1px solid #e5e9e2;border-radius:15px}table{width:100%;border-collapse:collapse;min-width:850px}th,td{padding:14px 13px;text-align:right;border-bottom:1px solid #eef0ed;font-size:13px;vertical-align:top}th{color:#667569;background:#f8faf7;font-size:12px}td .mini{font-size:11px;color:#839087;margin-top:5px}tr:last-child td{border:0}.tag{border-radius:8px;background:#f0f3ec;color:#516b57;padding:5px 8px;display:inline-block;white-space:nowrap}.tag.wait{background:#fff4df;color:#9b6c24}.tag.approved{background:#e2f2e7;color:#2b7449}.linkbtn{border:0;background:transparent;color:#315f46;text-decoration:underline;padding:2px}.empty{padding:25px;color:#829087}.detail-header{display:flex;align-items:center;gap:14px}.back{border:0;background:#e7ede5;border-radius:10px;padding:9px 14px}.detail-art{height:220px;border-radius:16px;background:linear-gradient(120deg,#d7dfd3,#f2e5d5);display:flex;align-items:center;justify-content:center;font-size:80px;margin:20px 0}.note{background:#f6f8f4;border-right:3px solid #a6b9a4;padding:14px;margin:12px 0;border-radius:6px;line-height:1.8}.modalshade{position:fixed;inset:0;background:#13231c80;display:flex;align-items:center;justify-content:center;padding:18px;z-index:10}.modal{width:min(610px,100%);max-height:90vh;overflow:auto;background:white;border-radius:18px;padding:25px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:7px;margin:12px 0;font-size:13px}.field input,.field select,.field textarea{padding:11px;border:1px solid #d6ded5;border-radius:9px;width:100%;background:#fff}.field.wide{grid-column:1/-1}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.hint{color:#77867a;font-size:13px;line-height:1.8}.hidden{display:none!important}@media(max-width:900px){.side{width:75px;padding:24px 8px}.brand{font-size:16px}.side .sub,.nav .word{display:none}.nav button{text-align:center;padding:14px 6px}.main{padding:24px}.rooms{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.shell{display:block}.side{height:auto;width:100%;position:static;padding:14px}.brand{display:inline}.nav{margin:12px 0 0;display:flex;overflow:auto}.nav button{white-space:nowrap;padding:10px}.nav .word{display:inline}.main{padding:18px}.top{display:block}.actions{margin-top:20px}.rooms{grid-template-columns:1fr 1fr;gap:10px}.art{height:105px}.room-body{padding:12px}.room-name{font-size:15px}.stats{gap:8px}.stat{padding:13px}.stat .num{font-size:22px}.h1{font-size:27px}.formgrid{grid-template-columns:1fr}}@media print{.side,.actions,.filters,.linkbtn,.back,.noprint{display:none!important}.main{padding:0}.shell{display:block}.panel,.tablewrap{border:0}.h1{font-size:24px}body{background:white}th,td{border-bottom:1px solid #ddd}}
+
+
+:root{font-family:'Heebo',Arial,sans-serif;color:#24332b;background:#f7f8f6}body{background:#f7f8f6}
+.side{width:265px;background:#172c25;color:#fff;border:0;padding:32px 18px;box-shadow:8px 0 32px #19332210}.brand{font-weight:800;letter-spacing:-.6px;padding:0 12px}.side .sub{color:#b2c3b7;padding:0 12px}.nav{margin-top:46px;gap:6px}.nav button{color:#b9cabe;font-weight:500;transition:.2s}.nav button:hover{background:#ffffff15;color:#fff}.nav button.active{background:#e1ede3;color:#1a3a2a;font-weight:750}
+.main{padding:46px clamp(24px,4vw,70px) 90px;max-width:1700px;margin:auto}.eyebrow{font-weight:700;color:#65846e;letter-spacing:.6px}.h1{font-size:clamp(30px,3vw,42px);letter-spacing:-1.2px;font-weight:800}.lead{color:#819088}.btn{border-radius:12px;font-size:13px;font-weight:650;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.primary{background:#255a40;border-color:#255a40}
+.stats{gap:16px;margin:34px 0}.stat{border:1px solid #e7eee8;border-radius:18px;padding:24px;box-shadow:0 6px 22px #1c362309;position:relative;overflow:hidden}.stat:before{content:'';height:3px;position:absolute;top:0;right:0;left:0;background:#b5d3bd}.stat .num{font-size:34px;font-weight:800;color:#23432e}.stat .lbl{font-weight:600}.section-title h2{font-weight:800;font-size:23px}.rooms{gap:20px}.room{border-radius:20px;box-shadow:0 6px 22px #1c362309;transition:.25s}.room:hover{transform:translateY(-5px);box-shadow:0 17px 32px #1c362321}.art{height:180px;font-size:58px;position:relative;background:linear-gradient(130deg,#b9cbbd,#e8e6d9 58%,#c8d4c8)}.art:after{content:'';position:absolute;inset:13px;border:1px solid #ffffff99;border-radius:12px;pointer-events:none}.room:nth-child(4n+2) .art{background:linear-gradient(130deg,#cbb8a8,#eee6d9,#c3cdbd)}.room:nth-child(4n+3) .art{background:linear-gradient(130deg,#bfcfcb,#eae6d9,#c4d2c7)}.room:nth-child(4n+4) .art{background:linear-gradient(130deg,#d3c4af,#f0e7d9,#c6d3c6)}.room-body{padding:20px}.room-name{font-weight:750;font-size:19px}.pill{border-radius:8px;font-weight:650;background:#eff5ef;color:#456e51}.panel,.tablewrap{border-radius:18px;box-shadow:0 5px 20px #172d2008}.panel{padding:25px}th{background:#f1f6f1;color:#53705c;font-weight:700}tr:hover td{background:#fafcf9}.modal{border-radius:22px}.filters input:focus,.filters select:focus,.field input:focus{outline:2px solid #8cb79a}.detail-art{background:linear-gradient(130deg,#c1d1c4,#eee5d7)}
+.quickpanel{display:flex;gap:18px;align-items:center;justify-content:space-between;background:linear-gradient(110deg,#e4efe6,#f8faf6);border:1px solid #dce9dd;border-radius:18px;padding:22px 26px;margin:15px 0 30px}.quickpanel strong{font-size:16px;color:#234633}.quickpanel p{margin:5px 0 0;font-size:13px;color:#708478}
+@media(max-width:900px){.side{width:80px}.main{padding:26px}.rooms{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.side{width:100%;padding:15px}.nav{margin-top:12px}.main{padding:20px 15px}.rooms{gap:12px}.art{height:120px;font-size:40px}.room-body{padding:13px}.room-name{font-size:16px}.stat{padding:15px}.stat .num{font-size:25px}.quickpanel{display:block}.quickpanel .btn{margin-top:15px}}@media print{.quickpanel{display:none}}
+
+.inspo-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.inspo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}.inspo-card{background:#fff;border:1px solid #e2e9e2;border-radius:18px;overflow:hidden;box-shadow:0 5px 25px #172a200b}.inspo-cover{height:210px;background:#e9eee8;display:flex;align-items:center;justify-content:center;color:#8d9f90;font-size:40px}.inspo-cover img{width:100%;height:100%;object-fit:cover}.inspo-body{padding:18px}.inspo-body h3{margin:0 0 7px;font-size:17px}.inspo-body p{color:#6e7d72;font-size:13px;line-height:1.7;min-height:20px}.inspo-label{display:inline-block;background:#edf3ed;color:#41684c;border-radius:8px;padding:5px 9px;font-size:12px}.inspo-actions{display:flex;justify-content:space-between;align-items:center;margin-top:16px}.upload-zone{border:2px dashed #afc8b5;border-radius:14px;padding:20px;text-align:center;background:#f6faf6}.upload-zone input{max-width:100%}.inspo-preview{max-height:180px;max-width:100%;border-radius:12px;margin-top:12px}.inspo-empty{grid-column:1/-1;text-align:center;padding:60px 20px;background:#fff;border:1px dashed #c9d8cb;border-radius:18px;color:#667e6d}.backup-warning{background:#fff8e9;border:1px solid #f0ddae;border-radius:13px;padding:14px 18px;color:#8b6929;font-size:13px;line-height:1.8;margin:20px 0}@media(max-width:1000px){.inspo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.inspo-grid{grid-template-columns:1fr}.inspo-cover{height:230px}}
+
+html,body,button,input,select,textarea{font-family:'Heebo',Arial,sans-serif!important}
+
+/* Global typography: applies to every view, including dynamically created dialogs. */
+:root { --app-font: 'Heebo', 'Arial', sans-serif; font-family: var(--app-font) !important; }
+html, body, body *, body *::before, body *::after, button, input, select, textarea, option, optgroup, table, th, td, svg text { font-family: var(--app-font) !important; }
+button, input, select, textarea { font-synthesis: none; }
+
+.dropzone{border:2px dashed #aac6b0;background:#f5faf5;border-radius:18px;padding:28px 18px;text-align:center;cursor:pointer;transition:.2s;margin:20px 0}.dropzone:hover,.dropzone.dragging{background:#e3f2e7;border-color:#327e54;transform:scale(1.005)}.dropzone strong{display:block;font-size:17px;margin-bottom:7px}.dropzone small{display:block;color:#708577}.batch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px;margin:18px 0}.batch-item{border:1px solid #dfe8e0;border-radius:12px;padding:8px;background:#fff}.batch-item img{width:100%;height:115px;object-fit:cover;border-radius:8px}.batch-item .btn{width:100%;margin-top:8px}.batch-item .field{margin:7px 0}.batch-item textarea{min-height:55px}.batch-status{color:#456c4d;font-size:13px;margin:8px 0}.modal.wide-modal{width:min(850px,100%)}.inspo-cover img{cursor:zoom-in}
+
+/* Purchase browsing: room tabs, search and refined controls */
+.purchase-toolbar{margin:30px 0 18px;background:#fff;border:1px solid #e5ebe5;border-radius:20px;padding:19px;box-shadow:0 6px 22px #172d2007}
+.purchase-toolbar-title{font-weight:800;font-size:14px;margin:0 0 13px;color:#354d3e}
+.purchase-tabs{display:flex;gap:7px;overflow-x:auto;padding:2px 1px 10px;scrollbar-width:thin;scrollbar-color:#c7d5c9 transparent}
+.purchase-tab{flex:none;display:flex;align-items:center;gap:9px;background:#f6f8f5;color:#62766a;border:1px solid transparent;border-radius:11px;padding:10px 14px;font-weight:650;font-size:13px;transition:.18s}
+.purchase-tab:hover{background:#eaf1eb;color:#244c34}.purchase-tab.active{background:#234c37;color:white;box-shadow:0 5px 12px #234c3726}
+.purchase-tab .count{font-size:11px;background:#e5ede6;color:#526f59;border-radius:7px;padding:2px 7px;min-width:23px;text-align:center}.purchase-tab.active .count{background:#ffffff2c;color:white}
+.purchase-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:13px;padding-top:15px;border-top:1px solid #edf0ec}
+.purchase-search{position:relative;flex:1;min-width:200px}.purchase-search svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#809589;pointer-events:none}
+.purchase-search input{width:100%;background:#f8faf8;border:1px solid #e1e9e2;border-radius:12px;padding:12px 42px 12px 15px;outline:none;color:#254032}
+.purchase-search input:focus{background:white;border-color:#80ad8c;box-shadow:0 0 0 3px #80ad8c20}
+.purchase-select{min-width:165px;border:1px solid #e1e9e2;background:#f8faf8;color:#425c4b;border-radius:12px;padding:12px 14px;outline:none}
+.purchase-results{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:24px 0 13px}.purchase-results strong{font-size:19px}.purchase-results span{color:#859388;font-size:13px}
+.purchase-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:19px}.purchase-kpi{background:#f8faf8;border:1px solid #eef1ed;border-radius:13px;padding:13px 17px}.purchase-kpi .value{font-size:20px;font-weight:800;color:#294f39}.purchase-kpi .label{font-size:12px;color:#87948a;margin-top:4px}
+@media(max-width:600px){.purchase-toolbar{padding:13px}.purchase-controls{display:block}.purchase-search{margin-bottom:10px}.purchase-select{width:100%}.purchase-kpis{gap:7px}.purchase-kpi{padding:10px}.purchase-kpi .value{font-size:16px}.purchase-results strong{font-size:16px}}
+@media print{.purchase-toolbar{display:none}}
+
+.work-filter-panel{background:#fff;border:1px solid #e4ebe4;border-radius:18px;padding:22px;margin:24px 0 18px;box-shadow:0 5px 22px #17322009}.work-filter-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;color:#284a34}.work-filter-reset{border:0;background:transparent;color:#587c65;cursor:pointer;font:inherit;font-size:13px}.work-filter-reset:hover{text-decoration:underline}.work-room-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 1px 12px;scrollbar-width:thin}.work-room-tab{white-space:nowrap;display:inline-flex;gap:9px;align-items:center;background:#f5f8f5;color:#4e6554;border:1px solid transparent;border-radius:11px;padding:10px 13px;font:inherit;font-size:13px;cursor:pointer}.work-room-tab span{font-size:11px;background:#e7eee7;border-radius:7px;padding:2px 6px}.work-room-tab:hover{background:#e9f1ea}.work-room-tab.active{background:#28533b;color:white}.work-room-tab.active span{background:#ffffff30;color:white}.work-search-wrap{display:flex;align-items:center;gap:10px;border:1px solid #dae5db;border-radius:12px;padding:0 14px;color:#72907a;margin-top:7px}.work-search-wrap:focus-within{border-color:#76a185;box-shadow:0 0 0 3px #e3f0e5}.work-search-wrap input{border:0;outline:0;background:transparent;width:100%;padding:13px 0;font:inherit;color:#294636}.work-filter-count{color:#7c8d80;font-size:12px;margin-top:12px}
+/* Single native select affordance: remove all overlapping background chevrons */
+select.inline-control,select.inline-control:hover,select.inline-control:focus,select.inline-control:focus-visible{appearance:none!important;-webkit-appearance:none!important;-moz-appearance:none!important;background-image:none!important;background-size:0 0!important;padding:7px 10px!important;transition:background-color .16s,border-color .16s!important}
+select.inline-control:hover,select.inline-control:focus{background-image:none!important}
+.inline-control{background-clip:padding-box!important}
+.row-action-group{display:inline-flex;align-items:center;justify-content:center;gap:3px;white-space:nowrap}
+.delete-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:9px;background:transparent;color:#9c7777;cursor:pointer;transition:background-color .15s,color .15s}
+.delete-icon-btn:hover,.delete-icon-btn:focus-visible{background:#ffebeb;color:#b33939}
+.delete-icon-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#toastStack{position:fixed;bottom:26px;left:26px;z-index:1100;display:grid;gap:9px;pointer-events:none}
+.app-toast{direction:rtl;display:flex;align-items:center;gap:10px;background:#203f30;color:white;border:1px solid #50735d;border-radius:12px;padding:12px 17px;min-width:210px;box-shadow:0 12px 32px #14261c33;font:600 13px Heebo,Arial,sans-serif;animation:toastEnter .2s ease}
+.app-toast.error{background:#783b3b;border-color:#a56b6b}
+@keyframes toastEnter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.confirm-shade{position:fixed;inset:0;background:#12241bb0;z-index:1050;display:grid;place-items:center;padding:20px}
+.confirm-dialog{background:white;border-radius:20px;padding:26px;width:min(420px,100%);box-shadow:0 22px 65px #07160e50;direction:rtl}
+.confirm-dialog h3{margin:0 0 10px;font-size:20px}.confirm-dialog p{color:#66786b;line-height:1.7;margin:0 0 23px}
+.confirm-actions{display:flex;justify-content:flex-end;gap:10px}.btn.danger{background:#b84040;border-color:#b84040;color:white}
+@media print{.row-action-group,#toastStack{display:none!important}}
+
+/* Unified filter system */
+.unified-filters{background:#fff;border:1px solid #e2ebe3;border-radius:20px;padding:22px;margin:24px 0;box-shadow:0 5px 22px #15372108}
+.filter-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;color:#2b4836}
+.filter-heading strong{font-size:15px}.filter-clear{background:transparent;border:0;color:#527b5c;font:600 12px Heebo,Arial;cursor:pointer;padding:8px}
+.room-filter-tabs{display:flex;gap:8px;overflow-x:auto;padding:3px 1px 13px;scrollbar-width:thin}
+.room-filter-tab{display:flex;align-items:center;gap:8px;flex-shrink:0;white-space:nowrap;background:#f7faf7;border:1px solid #e4ebe5;border-radius:12px;padding:10px 12px;font:600 13px Heebo,Arial;color:#506957;cursor:pointer;transition:background .15s,border-color .15s}
+.room-filter-tab:hover{background:#eaf3ec;border-color:#c1d9c7}.room-filter-tab.active{background:#28563d;border-color:#28563d;color:white}
+.room-tab-icon{font-size:17px;line-height:1}.room-tab-count{font-size:11px;opacity:.8;background:#ffffff25;border-radius:7px;padding:2px 6px}
+.filter-fields{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;margin-top:8px}
+.filter-search{display:flex;align-items:center;gap:10px;flex:2 1 240px;background:#f8faf8;border:1px solid #e0e9e1;border-radius:12px;padding:0 14px;min-height:46px}
+.filter-search span{font-size:24px;color:#78917f}.filter-search input{width:100%;border:0!important;background:transparent!important;outline:0!important;box-shadow:none!important;font:400 13px Heebo,Arial;color:#284434}
+.filter-select-wrap{display:flex;align-items:center;gap:9px;background:#f8faf8;border:1px solid #e0e9e1;border-radius:12px;padding:0 12px;min-height:46px;flex:1 1 165px}
+.filter-select-wrap>span{color:#6d8574;font:600 12px Heebo,Arial;white-space:nowrap}
+.filter-select-wrap select{width:100%;min-width:0;border:0!important;box-shadow:none!important;background-color:transparent!important;font:500 13px Heebo,Arial;color:#284434;cursor:pointer;padding:8px 6px 8px 22px}
+.filter-count{color:#829487;font-size:12px;margin-top:13px}.inspo-toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.inspo-toolbar .filter-search{max-width:430px}
+.reserve-input{background:#f7faf8!important;color:#234d36!important;border:1px solid #d8e6dc!important;border-radius:12px!important;width:95px!important;padding:11px 14px!important;font:600 17px Heebo,Arial!important;box-shadow:none!important;outline:none}
+.reserve-input:hover{background:#edf5ef!important;border-color:#a5c7af!important}.reserve-input:focus{border-color:#5d9a70!important;box-shadow:0 0 0 3px #dbeee0!important}
+@media(max-width:650px){.unified-filters{padding:15px}.filter-fields{flex-direction:column}.filter-search,.filter-select-wrap{flex:auto;width:100%}}
+
+/* Room cards always use readable text on their light surfaces. */
+.floor-section .rooms .room,
+.floor-section .rooms .room:hover,
+.floor-section .rooms .room:focus-visible {
+  color: #263d2f !important;
+}
+.floor-section .rooms .room .room-name {
+  color: #203c2b !important;
+  -webkit-text-fill-color: #203c2b;
+}
+.floor-section .rooms .room .room-meta {
+  color: #65786b !important;
+  -webkit-text-fill-color: #65786b;
+}
+.floor-section .rooms .room .pill {
+  color: #456e51 !important;
+  -webkit-text-fill-color: #456e51;
+}
+
+/* Unified row actions across room, works, purchases and decisions tables */
+.row-action-group{display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:4px;white-space:nowrap;direction:ltr;vertical-align:middle}
+.row-action-group .edit-icon-btn,.row-action-group .delete-icon-btn{width:34px!important;height:34px!important;min-width:34px;min-height:34px;padding:0!important;display:inline-flex!important;align-items:center;justify-content:center;border:0;border-radius:9px;font-size:0;line-height:1;transform:none}
+.row-action-group .edit-icon-btn svg,.row-action-group .delete-icon-btn svg{width:17px!important;height:17px!important;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.row-action-group .edit-icon-btn:hover{transform:none}
+.tablewrap td:has(> .row-action-group),.tablewrap td.action-col{white-space:nowrap;text-align:center;min-width:88px}
+@media print{.row-action-group{display:none!important}}
+
+/* Quantity and price empty-state polish */
+.data-table td.quantity-cell{white-space:nowrap;overflow-wrap:normal;min-width:118px}
+.quantity-inline{display:inline-flex;align-items:center;justify-content:flex-start;gap:5px;white-space:nowrap;flex-wrap:nowrap;direction:rtl;max-width:100%}
+.quantity-inline .inline-number{width:54px!important;min-width:48px!important;max-width:54px!important;flex:0 0 54px;padding:6px 5px!important;text-align:center}
+.quantity-unit{white-space:nowrap;flex-shrink:0;font-size:12px;color:#687b70;unicode-bidi:isolate}
+.unpriced-pill{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;line-height:1.35;border:1px solid #e3e8e1;border-radius:999px;background:#f5f7f3;color:#718074;padding:5px 9px;font-size:11px;font-weight:600;direction:rtl}
+.data-table .money-cell .unpriced-pill{font-variant-numeric:normal}
+
+/* Muted, consistent active state for room filter controls. */
+.purchase-tab.active,
+.work-room-tab.active,
+.room-filter-tab.active,
+.purchase-tab[aria-pressed="true"],
+.work-room-tab[aria-pressed="true"],
+.room-filter-tab[aria-pressed="true"] {
+  background:#e6eee8 !important;
+  color:#355b44 !important;
+  border-color:#b9cfbf !important;
+  box-shadow:inset 0 0 0 1px #d2e0d5 !important;
+  font-weight:700;
+}
+.purchase-tab.active:hover,
+.work-room-tab.active:hover,
+.room-filter-tab.active:hover {background:#dce9df !important;}
+.purchase-tab.active .count,
+.work-room-tab.active span,
+.room-filter-tab.active .room-tab-count,
+.purchase-tab[aria-pressed="true"] .count,
+.work-room-tab[aria-pressed="true"] span,
+.room-filter-tab[aria-pressed="true"] .room-tab-count {
+  background:#d3e3d7 !important;
+  color:#41624c !important;
+}
+
+/* Tighter spacing between each room table title and its item count. */
+.room-table-title > div{display:flex;flex-direction:column;justify-content:center;gap:1px;}
+.room-table-title h2{margin:0!important;line-height:1.22!important;}
+.room-table-title span:not(.room-table-emoji){display:block;line-height:1.3!important;margin:0!important;}
+</style><style>.edit-preview{background:linear-gradient(115deg,#edf5ee,#f8f9f5);border:1px solid #dce8de;border-radius:15px;padding:17px 20px;margin:17px 0 22px;display:grid;gap:6px}.edit-preview-kicker{font-size:11px;font-weight:750;color:#64836e}.edit-preview strong{font-size:19px;color:#244432}.edit-preview #editPreviewMeta{font-size:12px;color:#738679}.edit-preview #editPreviewPrice{font-size:15px;font-weight:750;color:#2b6545}.field input,.field select,.field textarea{color:#20382b!important;opacity:1!important;background:#fff!important}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #83ad90;outline-offset:1px}.editable-row{cursor:pointer;transition:background .15s ease}.editable-row:hover td{background:#edf5ef!important}.editable-row:focus-visible{outline:2px solid #41845b;outline-offset:-2px}.editable-row:hover .linkbtn{text-decoration:underline}.inline-control{font:inherit;color:#294a36;background:#f4f8f4;border:1px solid #dbe7dc;border-radius:9px;padding:7px 9px;max-width:125px;cursor:pointer}.inline-control:focus{outline:2px solid #8db79a;outline-offset:1px}.inline-number{width:70px;cursor:text}.inline-priority{font-weight:700}.inline-priority:has(option[value="חובה"]:checked){background:#fff1e8;color:#985124;border-color:#f2d3bd}.inline-priority:has(option[value="אופציונלי"]:checked){background:#f2f3f5;color:#68717b}.inline-status{max-width:115px} @media print{.inline-control{appearance:none;border:0;background:none;padding:0}}
+/* Quiet inline controls: plain text until hovered or focused */
+.inline-control{background:transparent!important;border:1px solid transparent!important;box-shadow:none!important;border-radius:8px;color:inherit!important;padding:7px 9px;transition:background .15s,border-color .15s,box-shadow .15s}
+.inline-control:hover,.inline-control:focus-visible{background:#f1f6f2!important;border-color:#c8dacc!important;box-shadow:0 1px 4px #193b2810!important}
+.inline-control:focus{background:#fff!important;border-color:#7da88b!important}
+select.inline-control{appearance:none;-webkit-appearance:none;background-image:none!important;padding-left:17px;cursor:pointer}
+select.inline-control:hover,select.inline-control:focus{appearance:auto;-webkit-appearance:auto}
+.inline-priority{font-weight:650}.inline-number{width:72px}.inline-control:has(option:checked){color:inherit!important}
+.edit-icon-btn{width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:#647d6c;border-radius:9px;cursor:pointer;transition:background .15s,color .15s,transform .15s}
+.edit-icon-btn:hover,.edit-icon-btn:focus-visible{background:#e5f0e7;color:#245b3d;transform:translateY(-1px)}
+.edit-icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media print{.inline-control{border:0!important;background:transparent!important;appearance:none!important}.edit-icon-btn{display:none}}
+
+/* Consistent RTL select arrows, inset from the left edge. */
+:root{--select-chevron:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23577561' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")}
+select:not([multiple]){
+  direction:rtl;
+  appearance:none!important;-webkit-appearance:none!important;-moz-appearance:none!important;
+  background-image:var(--select-chevron)!important;
+  background-repeat:no-repeat!important;
+  background-position:left 13px center!important;
+  background-size:15px 15px!important;
+  padding-left:40px!important;
+  padding-right:14px!important;
+  min-height:40px;
+  border-radius:11px;
+  transition:border-color .18s,background-color .18s,box-shadow .18s;
+}
+select:not([multiple]):hover{border-color:#abc9b2!important;background-color:#f6faf7!important}
+select:not([multiple]):focus-visible{outline:none!important;border-color:#679e78!important;box-shadow:0 0 0 3px #dcefe1!important}
+/* Inline editors stay visually quiet until interaction. */
+select.inline-control:not([multiple]){
+  background-image:none!important;
+  padding-left:13px!important;
+  padding-right:9px!important;
+  min-height:34px;
+  border-color:transparent!important;
+  background-color:transparent!important;
+}
+select.inline-control:not([multiple]):hover,
+select.inline-control:not([multiple]):focus,
+select.inline-control:not([multiple]):focus-visible{
+  background-image:var(--select-chevron)!important;
+  background-position:left 8px center!important;
+  background-size:13px 13px!important;
+  padding-left:25px!important;
+  background-color:#f2f8f3!important;
+  border-color:#c7ddcd!important;
+}
+@media(max-width:600px){select:not([multiple]){background-position:left 11px center!important;padding-left:36px!important}}
+
+/* Stable inline editing: no size, padding, or native-arrow changes on hover. */
+select.inline-control:not([multiple]),
+select.inline-control:not([multiple]):hover,
+select.inline-control:not([multiple]):focus,
+select.inline-control:not([multiple]):focus-visible {
+  appearance:none!important;-webkit-appearance:none!important;-moz-appearance:none!important;
+  box-sizing:border-box!important;
+  min-height:34px!important;
+  padding:7px 28px 7px 9px!important;
+  background-size:13px 13px!important;
+  background-position:left 8px center!important;
+  transition:background-color .15s,border-color .15s,box-shadow .15s!important;
+}
+select.inline-control:not([multiple]) {background-image:none!important;background-color:transparent!important;border-color:transparent!important;box-shadow:none!important}
+select.inline-control:not([multiple]):hover,
+select.inline-control:not([multiple]):focus,
+select.inline-control:not([multiple]):focus-visible {background-image:var(--select-chevron)!important;background-color:#f2f8f3!important;border-color:#c7ddcd!important}
+select.inline-control:not([multiple]):focus-visible{outline:2px solid #a2c5aa!important;outline-offset:1px!important}
+.inline-control.inline-number,.inline-control.inline-number:hover,.inline-control.inline-number:focus{box-sizing:border-box!important;padding:7px 9px!important;width:72px!important}
+
+/* Consistent column geometry and colored, calm inline labels */
+.polished-table{overflow-x:auto}
+.data-table{width:100%;min-width:880px;table-layout:fixed;border-collapse:separate;border-spacing:0}
+.data-table th,.data-table td{box-sizing:border-box;text-align:right;vertical-align:middle;padding:14px 12px;line-height:1.5;overflow-wrap:anywhere}
+.data-table th{font-size:12px;white-space:nowrap;letter-spacing:0}
+.data-table td{font-size:13px}
+.data-table td:nth-child(2){line-height:1.55}
+.data-table td:nth-child(2) .mini{font-size:11px;line-height:1.55;margin-top:5px}
+.data-table .money-cell{font-variant-numeric:tabular-nums;white-space:nowrap;direction:ltr;text-align:right;font-weight:650;color:#2e4938}
+.data-table .action-col{text-align:center;padding-left:8px;padding-right:8px}
+.data-table select.inline-control:not([multiple]){width:100%;max-width:125px;min-width:0;min-height:34px!important;padding:6px 9px 6px 24px!important;border-radius:9px!important;font-size:12px!important;font-weight:700!important;text-align:right;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;transition:background-color .15s,border-color .15s!important}
+.data-table select.inline-control:not([multiple]):hover,.data-table select.inline-control:not([multiple]):focus{padding:6px 9px 6px 24px!important;background-position:left 7px center!important}
+.data-table select.inline-control.priority-חובה{color:#a84d22!important;background-color:#fff0e5!important}
+.data-table select.inline-control.priority-רצוי{color:#386e9a!important;background-color:#eaf3fb!important}
+.data-table select.inline-control.priority-אופציונלי{color:#68747a!important;background-color:#f0f2f3!important}
+.data-table select.inline-control.status-לבדיקה,.data-table select.inline-control.status-פתוח{color:#9b6a21!important;background-color:#fff5dd!important}
+.data-table select.inline-control.status-אושר,.data-table select.inline-control.status-הושלם{color:#26764d!important;background-color:#e5f5e9!important}
+.data-table select.inline-control.status-בביצוע{color:#2b6ca5!important;background-color:#e7f2fc!important}
+.data-table select.inline-control.status-בוטל{color:#a64b50!important;background-color:#fcebed!important}
+.data-table select.inline-control.status-ממתין{color:#805fa0!important;background-color:#f2eafb!important}
+.data-table select.inline-control:not([multiple]):hover{filter:brightness(.97);border-color:#c2d4c6!important}
+.data-table select.inline-control:not([multiple]):focus{border-color:#86ad91!important;outline:none!important;box-shadow:0 0 0 2px #dbeadd!important}
+.data-table .inline-number{max-width:64px!important;width:64px!important;text-align:center}
+.data-table .edit-icon-btn{margin-inline:auto}
+@media(max-width:600px){.data-table{min-width:850px}.data-table th,.data-table td{padding:11px 9px}}
+
+.grouped-tables{display:flex;flex-direction:column;gap:38px;margin-top:26px}
+.room-table-section{min-width:0}
+.room-table-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:0 0 12px;padding:0 4px}
+.room-table-title{display:flex;align-items:center;gap:12px}
+.room-table-title h2{font-size:20px;letter-spacing:-.4px;margin:0;color:#203d2b}
+.room-table-title span:not(.room-table-emoji){font-size:12px;color:#87968b}
+.room-table-emoji{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#eaf1e9;font-size:22px}
+.room-table-actions{display:flex;align-items:center;gap:14px}
+.room-table-total{font-size:13px;color:#617b69;font-weight:650}
+.room-add-btn{border:1px solid #d9e6db;background:#fff;border-radius:10px;padding:9px 13px;color:#356346;font:600 12px Heebo,Arial,sans-serif;cursor:pointer}
+.room-add-btn:hover{background:#edf5ee;border-color:#9abda4}
+.room-table-wrap{margin:0!important}
+.room-table-wrap .data-table{table-layout:fixed;width:100%;min-width:720px}
+.room-table-wrap th,.room-table-wrap td{vertical-align:middle;text-align:right}
+.room-table-wrap .action-col{text-align:center}
+@media(max-width:700px){.room-table-heading{align-items:flex-start}.room-table-actions{flex-direction:column;align-items:flex-end;gap:5px}.room-table-title h2{font-size:17px}}
+
+/* Gir shevich family home identity */
+.side .brand{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:800;letter-spacing:-.7px;white-space:nowrap;padding:0 10px;margin-bottom:2px}
+.brand-mark{width:40px;height:40px;min-width:40px;border:1px solid rgba(219,237,222,.36);border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#557760,#294e3c);color:#f8f8f0;font-size:23px;box-shadow:0 4px 15px #08190f25}
+.brand-name{line-height:1.4}
+.side .brand-subtitle{margin:0;padding:0 62px 0 0;direction:ltr;text-align:right;font-family:Heebo,Arial,sans-serif;font-size:9px;font-weight:650;letter-spacing:1.45px;color:#a8c2ad;white-space:nowrap}
+.brand-dot{color:#80aa89}
+@media(max-width:900px){.side .brand{justify-content:center;padding:0}.brand-name,.side .brand-subtitle{display:none}}
+@media(max-width:560px){.side .brand{justify-content:flex-start}.brand-name{display:inline;font-size:19px}.side .brand-subtitle{display:block;padding-right:62px}}
+
+/* Final fix: inline table selects never tile SVG arrows on hover. */
+.data-table select.inline-control,
+.data-table select.inline-control:hover,
+.data-table select.inline-control:focus,
+.data-table select.inline-control:focus-visible,
+select.inline-control,select.inline-control:hover,select.inline-control:focus {
+  -webkit-appearance:none!important;appearance:none!important;-moz-appearance:none!important;
+  background-image:none!important;background-repeat:no-repeat!important;
+  background-size:0 0!important;
+}
+
+.floor-section{margin:24px 0 34px}.floor-heading{display:flex;align-items:center;gap:13px;margin:0 0 17px;padding:3px 2px 13px;border-bottom:1px solid #dce8df}.floor-heading h2{margin:0;font-size:21px;font-weight:750;color:#264b33}.floor-heading p{margin:2px 0 0;font-size:12px;color:#839388}.floor-symbol{display:grid;place-items:center;width:43px;height:43px;flex-shrink:0;border-radius:13px;background:#e4efe6;color:#396849;font-weight:800;font-size:16px;direction:ltr}.floor-table-group{margin-bottom:28px}.floor-table-group .room-table-section{margin:0 0 34px}.room-filter-floor-label{display:inline-flex;align-items:center;color:#6b8271;font-size:12px;font-weight:750;padding:6px 10px;border-right:2px solid #c7ddcc;white-space:nowrap}.floor-section .rooms{margin-top:0}
+
+/* Consistent lightweight outline navigation icons */
+.side .nav button{display:flex;align-items:center;gap:13px;width:100%;min-height:46px;line-height:1.25;direction:rtl;transition:background-color .18s ease,color .18s ease}
+.side .nav .nav-icon{width:20px;height:20px;flex:none;display:block;opacity:.86;transition:opacity .18s ease,transform .18s ease}
+.side .nav button:hover .nav-icon,.side .nav button.active .nav-icon{opacity:1}
+.side .nav button:hover .nav-icon{transform:translateY(-1px)}
+.side .nav button.active .nav-icon{stroke-width:2}
+@media(max-width:900px) and (min-width:561px){.side .nav button{justify-content:center;padding:13px 6px}.side .nav .nav-icon{width:22px;height:22px}}
+@media(max-width:560px){.side .nav button{width:auto;min-height:42px;gap:7px;padding:10px 12px}.side .nav .nav-icon{width:17px;height:17px}}
+
+/* Reordering is enabled only through the grip that appears on row hover. */
+.row-actions-with-drag{display:inline-flex;align-items:center;justify-content:center;gap:3px;white-space:nowrap}
+.drag-handle{width:29px;height:34px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:transparent;color:#6f8c78;cursor:grab;opacity:0;transition:opacity .15s,background-color .15s}
+.drag-handle svg{width:17px;height:17px;pointer-events:none}
+.drag-handle:hover,.drag-handle:focus-visible{background:#e5f0e8;color:#315b40;opacity:1}
+.drag-handle:active{cursor:grabbing}
+.reorder-row:hover .drag-handle,.reorder-row:focus-within .drag-handle{opacity:1}
+.reorder-row.dragging{opacity:.48}
+.reorder-row.drop-before{box-shadow:inset 0 3px 0 #3f9b68}
+.reorder-row.drop-after{box-shadow:inset 0 -3px 0 #3f9b68}
+.room-table-wrap .action-col{width:125px}
+@media (hover:none){.drag-handle{opacity:1}}
+@media print{.drag-handle{display:none!important}}
+
+/* Consistent vertical alignment in every dashboard table. */
+.tablewrap table th,
+.tablewrap table td,
+.room-table-wrap table th,
+.room-table-wrap table td {
+  vertical-align: middle !important;
+  text-align: right;
+  line-height: 1.5;
+}
+.tablewrap table td > b,
+.tablewrap table td > strong { vertical-align: middle; }
+.tablewrap table td .mini { margin-top: 3px; line-height: 1.45; }
+.tablewrap table td .row-actions-with-drag,
+.tablewrap table td .row-action-group,
+.tablewrap table td .quantity-inline,
+.tablewrap table td .unpriced-pill,
+.tablewrap table td .inline-control {
+  vertical-align: middle;
+}
+.tablewrap table td .row-actions-with-drag,
+.tablewrap table td .row-action-group { min-height: 34px; }
+.tablewrap table td.action-col,
+.tablewrap table th.action-col,
+.tablewrap table td:has(> .row-actions-with-drag) { text-align: center !important; }
+/* Decision/task labels are centered within the height of their row, not top-aligned. */
+#decisionRows td { vertical-align: middle !important; }
+/* Keep the contractor view readable on screen and in print. */
+@media print { .tablewrap table th,.tablewrap table td { vertical-align: middle !important; } }
+
+/* Decisions page: polished overview, room tabs and aligned table */
+.decision-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0}
+.decision-stat{background:#fff;border:1px solid #e1eae2;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;box-shadow:0 3px 14px rgba(27,65,39,.025)}
+.decision-stat span{font-size:13px;color:#728579}.decision-stat strong{font-size:29px;line-height:1.1;color:#294a36;font-weight:750}
+.decision-stat-open strong{color:#b57933}.decision-stat-waiting strong{color:#607aa7}.decision-stat-done strong{color:#36835a}
+.decision-filter-panel{background:#fff;border:1px solid #e1eae2;border-radius:18px;padding:22px;margin:22px 0 25px}
+.decision-filter-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px}
+.decision-filter-heading strong{font-size:16px;color:#263f2f}.decision-filter-heading p{margin:4px 0 0;color:#839187;font-size:12px}
+.decision-room-tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:19px}
+.decision-room-tab{font-family:inherit;display:inline-flex;align-items:center;gap:7px;border:1px solid #e0e9e1;background:#f8faf7;color:#4e6454;border-radius:11px;padding:9px 12px;cursor:pointer;font-size:12px;font-weight:600;transition:background .16s,border-color .16s,color .16s}
+.decision-room-tab:hover{background:#edf5ee;border-color:#b7d0bd}.decision-room-tab.selected{background:#e1f0e5;border-color:#91bda0;color:#275e3d}
+.decision-room-tab>span:last-child{font-size:11px;color:#789181;background:#fff;border-radius:20px;padding:1px 6px;min-width:21px;text-align:center}
+.decision-room-icon{font-size:15px}.decision-filter-bottom{display:flex;gap:12px;align-items:flex-end}.decision-filter-bottom .filter-search{flex:1;min-width:180px}.decision-filter-bottom .filter-select-wrap{min-width:180px}
+.decision-results-heading{display:flex;align-items:center;justify-content:space-between;margin:24px 2px 12px}.decision-results-heading h2{font-size:19px;color:#284333;margin:0}.decision-results-heading p{font-size:12px;color:#809085;margin:4px 0 0}
+.decision-table-wrap{border-radius:16px;overflow-x:auto}.decision-table{width:100%;table-layout:fixed}.decision-table th:nth-child(1){width:23%}.decision-table th:nth-child(2){width:43%}.decision-table th:nth-child(3){width:16%}.decision-table th:nth-child(4){width:18%}
+.decision-table th,.decision-table td{vertical-align:middle!important;text-align:right}.decision-table .row-actions-with-drag{justify-content:center}.decision-table th:last-child{text-align:center}
+.decision-room-label{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-size:13px;color:#506959}.decision-room-label>span{font-size:17px}.decision-name{font-size:13px;font-weight:650;color:#2b4032;line-height:1.6}.decision-note{font-size:11px;color:#829086;margin-top:3px;line-height:1.5}
+@media(max-width:850px){.decision-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.decision-filter-bottom{flex-wrap:wrap}}
+@media(max-width:520px){.decision-stat{padding:14px}.decision-filter-panel{padding:15px}.decision-filter-bottom .filter-search,.decision-filter-bottom .filter-select-wrap{width:100%;min-width:0}}
+
+/* Match decision statuses to the colored status pills in other tables. */
+.decision-table select.inline-control.inline-status {
+  display:inline-block!important;
+  width:100%!important;
+  max-width:125px!important;
+  min-height:34px!important;
+  padding:6px 10px!important;
+  border:1px solid transparent!important;
+  border-radius:9px!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  text-align:right;
+  background-image:none!important;
+  background-repeat:no-repeat!important;
+  -webkit-appearance:none!important;
+  appearance:none!important;
+  cursor:pointer;
+  transition:filter .15s,border-color .15s!important;
+}
+.decision-table select.inline-status.status-פתוח{color:#9b6a21!important;background-color:#fff5dd!important}
+.decision-table select.inline-status.status-ממתין{color:#805fa0!important;background-color:#f2eafb!important}
+.decision-table select.inline-status.status-הושלם{color:#26764d!important;background-color:#e5f5e9!important}
+.decision-table select.inline-status:hover{filter:brightness(.97);border-color:#c2d4c6!important}
+.decision-table select.inline-status:focus-visible{outline:2px solid #86ad91!important;outline-offset:2px}
+
+/* Slightly larger typography throughout all dashboard tables */
+.tablewrap table th, .room-table-wrap table th, .decision-table th {font-size:13px!important;line-height:1.5}
+.tablewrap table td, .room-table-wrap table td, .decision-table td {font-size:14px!important;line-height:1.55}
+.tablewrap table td .mini, .decision-table td .mini {font-size:12px!important;line-height:1.5}
+.tablewrap table td select.inline-control, .decision-table td select.inline-control {font-size:13px!important;line-height:1.35}
+.tablewrap table td .unpriced-pill, .tablewrap table td .tag, .decision-table td .tag {font-size:13px!important}
+.tablewrap table td input.inline-number {font-size:14px!important}
+@media print { .tablewrap table td, .decision-table td {font-size:13px!important} }
+</style><style>
+.woodwork-document{max-width:1120px;margin:auto}.woodwork-intro{margin:25px 0 22px;padding:20px 24px;border:1px solid #dfe8df;border-radius:14px;background:#f7faf6;line-height:1.8}.woodwork-intro p{margin:6px 0;color:#5d7062}.woodwork-count{font-size:13px;color:#386449;font-weight:700}.woodwork-room{margin:38px 0;break-inside:avoid-page}.woodwork-room h2{font-size:20px;color:#254a32;margin:0 0 12px}.woodwork-table{width:100%;min-width:0;table-layout:fixed;background:white;border:1px solid #e0e7e0;border-radius:10px;overflow:hidden}.woodwork-table th,.woodwork-table td{font-size:13px!important;padding:13px 12px;vertical-align:middle!important;overflow-wrap:anywhere}.woodwork-table th{background:#edf3ed;color:#345642}.woodwork-footer{margin-top:32px;border-top:1px solid #d9e2da;padding-top:16px;line-height:1.8;color:#526658}.woodwork-signature{margin-top:18px;font-size:13px}
+@media print{@page{size:A4 portrait;margin:14mm 12mm}.woodwork-document{max-width:none}.woodwork-document .top{margin-bottom:14px}.woodwork-intro{background:#f7faf6!important;padding:12px 16px;margin:12px 0 18px;print-color-adjust:exact;-webkit-print-color-adjust:exact}.woodwork-room{margin:17px 0;break-inside:auto}.woodwork-room h2{break-after:avoid;font-size:16px}.woodwork-table{border-collapse:collapse}.woodwork-table thead{display:table-header-group}.woodwork-table tr{break-inside:avoid}.woodwork-table th,.woodwork-table td{padding:8px 7px;font-size:10px!important}.woodwork-table th{background:#edf3ed!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.woodwork-footer{break-inside:avoid}.main{width:100%}}
+</style></head><body><div class="shell"><aside class="side"><div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-7h6v7"/></svg></span><span class="brand-name">בית גירשביץ׳</span></div><div class="sub brand-subtitle">HOME RENOVATION <span class="brand-dot">·</span> 2026</div><nav class="nav" id="nav"><button data-view="home" class="active"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span class="word">סקירה כללית</span></button><button data-view="works"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-7h6v7"/><path d="M8 10h2M14 10h2"/><path d="M3 5h3M4.5 3.5v3"/></svg><span class="word">עבודות שיפוץ</span></button><button data-view="purchases"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h2l2.2 10h11.6L21 9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="word">רכישות ורהיטים</span></button><button data-view="inspo"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span class="word">ספריית השראות</span></button><button data-view="renders"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 6.2L20 11l-6.2 1.8L12 19l-1.8-6.2L4 11l6.2-1.8z"/><path d="M19 17v4M17 19h4"/></svg><span class="word">ספריית הדמיות</span></button><button data-view="budget"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 9h18"/><path d="M16 15h2"/></svg><span class="word">תקציב</span></button><button data-view="decisions"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 4-4M8 16h8"/></svg><span class="word">החלטות פתוחות</span></button><button data-view="woodwork"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 20V8l6-4 6 4v12M9 11h6M9 15h6"/><path d="M16 5l3-2 2 3-3 2"/></svg><span class="word">תצוגת נגרות</span></button><button data-view="contractor"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/><path d="m15 17 2 2 4-4"/></svg><span class="word">תצוגת קבלן</span></button></nav></aside><main class="main" id="main"></main></div><div id="modalRoot"></div><script>
+const rooms=[['סלון','🛋️','פרקט, קיר טלוויזיה ומדפים'],['מטבח','🍽️','פרקט ושדרוג ארונות'],['שירותי אורחים','🚽','ריצוף, חיפוי ואסלה'],['חדר רחצה אחים','🚿','מקלחון ועיצוב חדש'],['חדר רחצה הורים','🛁','חיפויים, מקלחון ונגרות'],['חדר הורים','🛏️','מיטה גדולה ותאורה'],['ממ״ד','🗄️','אחסון מותאם'],['כניסה לבית','🚪','ניצול הנישה המשולשת'],['מסדרון ומדרגות','🪜','בחינה ותכנון'],['פינת אוכל','🪑','חלון במקום קיר הטפט'],['גינה','🌿','הצללה ופיתוח חוץ'],['כללי','🏠','עבודות לכל הבית']];
+const floors=[{name:'קומה תחתונה',icon:'↓',rooms:['סלון','מטבח','פינת אוכל','כניסה לבית','שירותי אורחים','ממ״ד','גינה']},{name:'קומה עליונה',icon:'↑',rooms:['חדר הורים','חדר רחצה הורים','חדר רחצה אחים']}];
+function floorOf(room){return floors.find(f=>f.rooms.includes(room))?.name||'אזורים נוספים'}
+function floorGroupCards(){return [...floors.map(f=>f.name),'אזורים נוספים'].map(name=>{const items=rooms.filter(r=>floorOf(r[0])===name);if(!items.length)return '';return `<section class="floor-section"><div class="floor-heading"><span class="floor-symbol">${name==='קומה תחתונה'?'<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg>':name==='קומה עליונה'?'<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg>':'<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16m-4-4 4 4 4-4M17 20V4m-4 4 4-4 4 4"/></svg>'}</span><div><h2>${name}</h2><p>${items.length} חללים</p></div></div><div class="rooms">${items.map(r=>`<button class="room" onclick="go('room','${r[0]}')"><div class="art">${r[1]}</div><div class="room-body"><div class="room-name">${r[0]}</div><div class="room-meta">${r[2]}</div><div class="pill">${data.works.filter(x=>x.room===r[0]).length} עבודות · ${data.purchases.filter(x=>x.room===r[0]).length} רכישות</div></div></button>`).join('')}</div></section>`}).join('')}
+const seedWorks=[
+['סלון','פירוק קיר הגבס מאחורי הטלוויזיה','פירוק ופינוי','חובה'],['סלון','הכנת קיר טלוויזיה חדש, עם טלוויזיה ממורכזת','גמרים','רצוי'],['סלון','התקנת פרקט','ריצוף','חובה'],['סלון','התקנת שני מדפים חופפים מעל הטלוויזיה','נגרות','רצוי'],['מטבח','התקנת פרקט','ריצוף','חובה'],['מטבח','שינוי חלוקת ארונות עליונים לפי ההדמיות','נגרות','רצוי'],['מטבח','החלפת חזיתות או צביעת הארונות העליונים והסרת ידיות','נגרות','רצוי'],['מטבח','התאמות ארונות באזור המקרר והסרת המיקרוגל מהנישה','נגרות','רצוי'],['שירותי אורחים','פירוק ריצוף וחיפויים קיימים','פירוק ופינוי','חובה'],['שירותי אורחים','ריצוף וחיפוי חדשים','ריצוף','חובה'],['שירותי אורחים','החלפת אסלה לאסלה תלויה כולל מיכל הדחה סמוי','אינסטלציה','רצוי'],['שירותי אורחים','התקנת מראה חדשה, שמירה על הכיור הקיים','התקנה','רצוי'],['חדר רחצה אחים','פירוק האמבטיה הקיימת','פירוק ופינוי','חובה'],['חדר רחצה אחים','הקמת מקלחון במקום האמבטיה, משמאל לכניסה','אינסטלציה','חובה'],['חדר רחצה אחים','החלפת ריצוף וחיפוי','ריצוף','רצוי'],['חדר רחצה אחים','התאמות מיקום ארונות לצד שמאל','נגרות','רצוי'],['חדר רחצה הורים','פירוק חיפויים וריצוף קיימים','פירוק ופינוי','חובה'],['חדר רחצה הורים','ריצוף וחיפוי חדשים','ריצוף','חובה'],['חדר רחצה הורים','החלפת מקלחון','אינסטלציה','חובה'],['חדר רחצה הורים','ארונית עץ מעל האסלה תואמת לארון הכיור','נגרות','רצוי'],['חדר הורים','נקודות חשמל ותאורה לשתי מנורות תלויות לצד המיטה','חשמל','רצוי'],['חדר הורים','החלפת גוף תאורה מרכזי לצמוד תקרה','חשמל','רצוי'],['חדר הורים','הכנת קיר לתמונות מעל מיטה ללא גב','גמרים','רצוי'],['ממ״ד','תכנון והתקנת מערך ארונות אחסון','נגרות','רצוי'],['כניסה לבית','תכנון ובניית נגרות לנישה המשולשת','נגרות','רצוי'],['פינת אוכל','בדיקת היתכנות לפתיחת חלון בקיר עם הטפט','תכנון ובדיקות','אופציונלי'],['פינת אוכל','פתיחת פתח והתקנת חלון בכפוף להיתר ולאישור מקצועי','בנייה','אופציונלי'],['מסדרון ומדרגות','בדיקת שדרוגים נדרשים לאחר קבלת תוכנית הבית','תכנון ובדיקות','אופציונלי'] ];
+const seedPurchases=[['חדר הורים','מיטה ובסיס גדולים יותר','ריהוט'],['חדר הורים','שתי מנורות תלויות לצד המיטה','תאורה'],['חדר הורים','מנורה מרכזית צמודת תקרה','תאורה'],['חדר הורים','תמונות מעל המיטה','דקורציה'],['שירותי אורחים','מראה חדשה','אביזרים'],['שירותי אורחים','אסלה תלויה ומיכל סמוי','סניטריה'],['חדר רחצה אחים','מקלחון חדש','סניטריה'],['חדר רחצה אחים','ארונות מותאמים','נגרות'],['חדר רחצה הורים','מקלחון חדש','סניטריה'],['חדר רחצה הורים','ארונית מעל האסלה','נגרות'],['סלון','שני מדפים מעל הטלוויזיה','נגרות'],['סלון','פרקט','חומרי גמר'],['מטבח','פרקט','חומרי גמר'],['ממ״ד','מערכת ארונות אחסון','נגרות'],['כניסה לבית','ארון נגרות לנישה המשולשת','נגרות']];
+// Purchases requested for the garden, safe room and parents' bedroom.
+// Existing bed and safe-room storage entries are intentionally not duplicated.
+const seedDecisions=[['כללי','קבלת תוכנית הבית ומידות','ממתין'],['כללי','בחירת סדרי עדיפויות ותקציב יעד','פתוח'],['סלון','אישור סופי לעיצוב מדפי הטלוויזיה','פתוח'],['מטבח','אישור סופי לחלוקת הארונות ולצבע','פתוח'],['חדר רחצה אחים','בדיקת מיקומי אינסטלציה ומידות מקלחון','ממתין'],['פינת אוכל','בדיקת קונסטרוקציה, חזית והיתרים לחלון','ממתין'],['חדר הורים','בחירת גודל מיטה ומיקום נקודות תאורה','פתוח'],['ממ״ד','בדיקת תקנות והגבלות לממ״ד לפני נגרות','ממתין'],['כללי','איסוף הצעות מחיר מקבלנים','פתוח']];
+const initial={works:seedWorks.map((a,i)=>({id:'w'+i,room:a[0],name:a[1],category:a[2],priority:a[3],status:'לבדיקה',quantity:'',unit:'',unitPrice:'',notes:'',supplier:'לא נקבע'})),purchases:seedPurchases.map((a,i)=>({id:'p'+i,room:a[0],name:a[1],category:a[2],priority:'רצוי',status:'לבדיקה',quantity:1,unit:'יח׳',unitPrice:'',notes:'',supplier:'לא נקבע',url:''})),decisions:seedDecisions.map((a,i)=>({id:'d'+i,room:a[0],name:a[1],status:a[2],notes:''})),reserve:15};
+let data;try{data=JSON.parse(localStorage.getItem('renovationV1'))||structuredClone(initial)}catch(e){data=structuredClone(initial)}
+const extraWorks=[
+['מטבח','החלפת דלתות וחזיתות ארונות המטבח','נגרות','רצוי',['חזיתות','דלתות ארונות']],
+['מטבח','החלטה וביצוע פתרון לחלק העליון של הארונות עד התקרה','נגרות','רצוי',['ארונות עד התקרה','סגירה מעל הארונות']],
+['מטבח','פירוק והסרת קולט האדים','פירוק ופינוי','רצוי',['קולט אדים']],
+['מטבח','התקנת מדפים במקום קולט האדים','נגרות','רצוי',['מדפים במקום הקולט']],
+['מטבח','הוספת תאורה במטבח','חשמל','רצוי',['תאורה במטבח']],
+['סלון','פירוק קיר גבס מאחורי הטלוויזיה','פירוק ופינוי','חובה',['פירוק קיר הגבס']],
+['סלון','סגירת החלל המשולש מאחורי הספה','בנייה','רצוי',['משולש מאחורי הספה']],
+['סלון','טיפול במזגן בסלון — מיקום, התקנה או החלפה','מיזוג אוויר','רצוי',['מזגן בסלון']],
+['סלון','בדיקת היתכנות והתקנת חלון בסלון','בנייה','רצוי',['חלון בסלון']],
+['שירותי אורחים','החלפת אסלה בשירותי אורחים','אינסטלציה','חובה',['החלפת אסלה','אסלה תלויה']],
+['חדר רחצה אחים','החלפת אסלה בחדר רחצה אחים','אינסטלציה','רצוי',['אסלה בחדר רחצה אחים']],
+['חדר רחצה הורים','החלפת אסלה בחדר רחצה הורים','אינסטלציה','רצוי',['אסלה בחדר רחצה הורים']],
+['שירותי אורחים','החלפת קרמיקה וריצוף בשירותי אורחים','ריצוף','חובה',['ריצוף וחיפוי חדשים']],
+['חדר רחצה אחים','החלפת קרמיקה וריצוף בחדר רחצה אחים','ריצוף','חובה',['החלפת ריצוף וחיפוי']],
+['חדר רחצה הורים','החלפת קרמיקה וריצוף בחדר רחצה הורים','ריצוף','חובה',['ריצוף וחיפוי חדשים']],
+['חדר רחצה אחים','פירוק האמבטיה הקיימת','פירוק ופינוי','חובה',['פירוק האמבטיה']],
+['חדר רחצה אחים','התקנת מקלחון במקום האמבטיה','אינסטלציה','חובה',['הקמת מקלחון במקום האמבטיה']],
+['חדר רחצה הורים','החלפת המקלחון בחדר רחצה הורים','אינסטלציה','רצוי',['החלפת מקלחון']],
+['כללי','הסרת טפטים בכל החדרים שבהם קיימים טפטים','פירוק ופינוי','רצוי',['הסרת טפטים בכל','הורדת טפטים בכל']],
+['כניסה לבית','צביעת דלת הכניסה והמשקוף','צביעה','רצוי',['צביעת דלת הכניסה']],
+['כללי','צביעת כל קירות הבית','צביעה','חובה',['צביעת כל הקירות','צביעת קירות הבית']],
+['מסדרון ומדרגות','תיקון וצביעת המדרגות','גמרים','רצוי',['תיקון וצביעת המדרגות']],
+['כללי','התקנת וילונות בכל הבית','התקנה','רצוי',['וילונות בכל הבית']],
+['גינה','החלפת הצילייה בגינה','עבודות חוץ','רצוי',['צילייה בגינה','הצללה בגינה']]
+];
+function mergeExtraWorks(){if(!Array.isArray(data.works))return;let changed=false;for(const [room,name,category,priority,aliases] of extraWorks){const norm=t=>String(t||'').replace(/[״"׳'\-–]/g,'').replace(/\s+/g,' ').trim();const exists=data.works.some(x=>x.room===room&&[name,...aliases].some(a=>norm(x.name).includes(norm(a))||norm(a).includes(norm(x.name))));if(exists)continue;data.works.push({id:'wextra_'+crypto.randomUUID(),room,name,category,priority,status:'לבדיקה',quantity:'',unit:'',unitPrice:'',notes:'',supplier:'לא נקבע'});changed=true;}if(changed)try{localStorage.setItem('renovationV1',JSON.stringify(data))}catch(e){console.warn('Unable to persist new renovation works',e)}}
+
+function mergeExtraPurchases(){
+  if(!Array.isArray(data.purchases))return;
+  const requested=[
+    {room:'גינה',name:'שולחן אוכל לחוץ',category:'ריהוט חוץ',matches:['שולחן אוכל לחוץ','שולחן לחוץ','שולחן גינה','שולחן חוץ']},
+    {room:'גינה',name:'כיסאות לחוץ',category:'ריהוט חוץ',matches:['כיסאות לחוץ','כסאות לחוץ','כיסאות גינה','כסאות גינה','כיסאות חוץ','כסאות חוץ']},
+    {room:'חדר הורים',name:'מזרן למיטה החדשה',category:'ריהוט',matches:['מזרן','מזרון']},
+    {room:'חדר הורים',name:'שתי שידות לצד המיטה',category:'ריהוט',matches:['שידות לצד המיטה','שידות לילה','שידות לחדר הורים','שידות מיטה']}
+  ];
+  const normalize=v=>String(v||'').replace(/[״"׳'\-–]/g,'').replace(/\s+/g,' ').trim();
+  let changed=false;
+  for(const item of requested){
+    const exists=data.purchases.some(p=>p.room===item.room&&item.matches.some(m=>normalize(p.name).includes(normalize(m))));
+    if(exists)continue;
+    data.purchases.push({id:'pextra_'+crypto.randomUUID(),room:item.room,name:item.name,category:item.category,priority:'רצוי',status:'לבדיקה',quantity:item.name.startsWith('שתי ')?2:1,unit:'יח׳',unitPrice:'',notes:'',supplier:'לא נקבע',url:''});
+    changed=true;
+  }
+  if(changed)try{localStorage.setItem('renovationV1',JSON.stringify(data))}catch(e){console.warn('Unable to persist purchases',e)}
+}
+mergeExtraWorks();mergeExtraPurchases();let view='home',selectedRoom=null,search='',filterRoom='הכל',purchaseStatus='הכל',priorityFilter='הכל',decisionStatus='הכל',decisionRoom='הכל',decisionSearch='',mediaSearch='',mediaRoom='הכל';const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),money=n=>Number(n||0).toLocaleString('he-IL',{style:'currency',currency:'ILS',maximumFractionDigits:0}),sum=items=>items.reduce((a,x)=>a+(Number(x.quantity)||0)*(Number(x.unitPrice)||0),0),save=()=>{try{localStorage.setItem('renovationV1',JSON.stringify(data));render()}catch(e){showToast('השמירה נכשלה — ייתכן שהאחסון מלא',true)}};
+function header(title,desc,actions=''){return `<div class="top"><div><div class="eyebrow">פרויקט שיפוץ הבית</div><h1 class="h1">${title}</h1><p class="lead">${desc}</p></div><div class="actions noprint">${actions}</div></div>`}function go(v,r=null){view=v;selectedRoom=r;search='';filterRoom='הכל';purchaseStatus='הכל';priorityFilter='הכל';decisionStatus='הכל';decisionRoom='הכל';decisionSearch='';mediaSearch='';mediaRoom='הכל';render();window.scrollTo(0,0)}
+function render(){document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));let m=$('#main');if(view==='home')m.innerHTML=home();if(view==='works'||view==='purchases')m.innerHTML=listing(view);if(view==='budget')m.innerHTML=budget();if((view==='inspo'||view==='renders')){m.innerHTML=view==='renders'?rendersPage():inspoPage();renderInspoCards(false,view==='renders'?'renders':'inspo');}if(view==='decisions'){m.innerHTML=decisions();updateDecisionRows();}if(view==='contractor')m.innerHTML=contractor();if(view==='woodwork')m.innerHTML=woodworkPrintView();if(view==='room'){m.innerHTML=roomPage();renderInspoCards(true);renderInspoCards(true,'renders');}if(view==='works'||view==='purchases')updateRows(view);}
+function home(){return header('הבית שלנו','הפרויקט של משפחת גירשביץ׳ · כל הרעיונות, העבודות וההחלטות במקום אחד.',`<button class="btn" onclick="exportData()">גיבוי מלא ↓</button><button class="btn" onclick="go('inspo')">ספריית השראות ✦</button><button class="btn primary" onclick="go('contractor')">תצוגה לקבלן ←</button>`)+`<div class="stats"><div class="stat"><div class="lbl">חללים בתכנון</div><div class="num">${rooms.length}</div></div><div class="stat"><div class="lbl">עבודות שיפוץ</div><div class="num">${data.works.length}</div></div><div class="stat"><div class="lbl">רכישות</div><div class="num">${data.purchases.length}</div></div><div class="stat"><div class="lbl">עלות מתומחרת כרגע</div><div class="num">${money(sum(data.works)+sum(data.purchases))}</div></div></div><div class="quickpanel"><div><strong>מכינים את הבית לשלב הבא</strong><p>כל העבודות במקום אחד. השלימו כמויות ומפרטים לפני שמעבירים לקבלן.</p></div><button class="btn primary" onclick="go('works')">לרשימת העבודות ←</button></div><div class="section-title"><h2>החללים בבית</h2><span class="sub">בחרו חדר כדי לצפות בפרטים</span></div>${floorGroupCards()}<div class="panel"><b>לפני שמבקשים הצעת מחיר</b><p class="hint">יש להשלים מידות, כמויות, מפרטים, החלטות על חומרים והיקף עבודה. הסעיפים כאן הם טיוטת תכנון, לא כתב כמויות מקצועי. בדיקות הנדסיות והיתרים יבוצעו על ידי אנשי מקצוע מתאימים.</p></div>`}
+function roomPage(){let r=rooms.find(x=>x[0]===selectedRoom);return `<div class="detail-header"><button class="back" onclick="go('home')">→ כל החדרים</button><h1>${r[0]}</h1></div><div class="detail-art">${r[1]}</div><div class="note">${r[2]}<br>ניתן להוסיף הדמיות בספריית ההדמיות, ולשייך אותן לחדר הזה.</div><div class="section-title"><h2>השראות לחדר</h2><button class="btn" onclick="go('inspo')">כל ההשראות ←</button></div><div id="roomInspo" class="inspo-grid"></div><div class="section-title"><h2>הדמיות לחדר</h2><button class="btn" onclick="go('renders')">כל ההדמיות ←</button></div><div id="roomRenders" class="inspo-grid"></div><div class="section-title"><h2>עבודות בחדר</h2><button class="btn" onclick="openEditor('works',null,'${r[0]}')">+ הוספת עבודה</button></div>${miniList('works',r[0])}<div class="section-title"><h2>רהיטים ורכישות</h2><button class="btn" onclick="openEditor('purchases',null,'${r[0]}')">+ הוספת רכישה</button></div>${miniList('purchases',r[0])}`}
+const priorityRank={'חובה':0,'רצוי':1,'אופציונלי':2};
+function byPriority(items){return [...items].sort((a,b)=>(priorityRank[a.priority]??3)-(priorityRank[b.priority]??3))}
+function miniList(type,room){let arr=byPriority(data[type].filter(x=>x.room===room));return `<div class="tablewrap"><table style="min-width:0" data-reorder-type="${type}" data-reorder-group="${esc(room)}"><tr><th>סעיף</th><th>עדיפות</th><th>עלות</th><th></th></tr>${arr.map(x=>`<tr class="reorder-row" data-row-id="${esc(x.id)}"><td>${esc(x.name)}</td><td>${esc(x.priority)}</td><td>${x.quantity&&x.unitPrice?money(x.quantity*x.unitPrice):'<span class="unpriced-pill">לא תומחר</span>'}</td><td><div class="row-actions-with-drag">${rowActionButtons(type,x.id)}<button type="button" class="drag-handle" draggable="true" aria-label="שינוי סדר השורה" title="גרירה לשינוי סדר" onmousedown="event.stopPropagation()" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="5" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg></button></div></td></tr>`).join('')}</table></div>`}
+function roomIcon(name){const r=rooms.find(x=>x[0]===name);return r?r[1]:'🏠'}
+function roomTab(room, count, active, handler){return `<button type="button" class="room-filter-tab ${active?'active':''}" aria-pressed="${active}" onclick="${handler}"><span class="room-tab-icon">${room==='הכל'?'▦':roomIcon(room)}</span><span>${room==='הכל'?'כל החדרים':esc(room)}</span><span class="room-tab-count">${count}</span></button>`}
+function roomTabs(type){const arr=data[type],names=[...new Set([...rooms.map(r=>r[0]),...arr.map(x=>x.room).filter(Boolean)])].filter(r=>arr.some(x=>x.room===r));return `<div class="room-filter-tabs" role="group" aria-label="סינון לפי חדר">${roomTab('הכל',arr.length,filterRoom==='הכל',`setRoomFilter('${type}','הכל')`)}${[...floors.map(f=>f.name),'אזורים נוספים'].map(floor=>{const list=names.filter(r=>floorOf(r)===floor);return list.length?`<span class="room-filter-floor-label">${floor}</span>${list.map(r=>roomTab(r,arr.filter(x=>x.room===r).length,filterRoom===r,`setRoomFilter('${type}',decodeURIComponent('${encodeURIComponent(r)}'))`)).join('')}`:''}).join('')}</div>`}
+function setRoomFilter(type,room){filterRoom=room;document.querySelectorAll('.room-filter-tab').forEach(b=>b.classList.toggle('active',b.textContent.trim().replace(/\d+$/,'').trim().includes(room==='הכל'?'כל החדרים':room)));updateRows(type)}
+function resetListFilters(type){filterRoom='הכל';search='';purchaseStatus='הכל';priorityFilter='הכל';render()}
+function listFilters(type){const purchase=type==='purchases';return `<section class="unified-filters noprint"><div class="filter-heading"><strong>סינון לפי חדר</strong><button class="filter-clear" onclick="resetListFilters('${type}')">ניקוי סינון</button></div>${roomTabs(type)}<div class="filter-fields"><label class="filter-search"><span>⌕</span><input id="search" placeholder="חיפוש לפי שם, קטגוריה או הערות..." value="${esc(search)}" oninput="search=this.value;updateRows('${type}')"></label><label class="filter-select-wrap"><span>סטטוס</span><select onchange="purchaseStatus=this.value;updateRows('${type}')"><option value="הכל">כל הסטטוסים</option>${['לבדיקה','אושר','בביצוע','הושלם','בוטל'].map(v=>`<option ${purchaseStatus===v?'selected':''}>${v}</option>`).join('')}</select></label><label class="filter-select-wrap"><span>עדיפות</span><select onchange="priorityFilter=this.value;updateRows('${type}')"><option value="הכל">כל העדיפויות</option>${['חובה','רצוי','אופציונלי'].map(v=>`<option ${priorityFilter===v?'selected':''}>${v}</option>`).join('')}</select></label></div><div class="filter-count" id="workFilterCount"></div>${purchase?'<div class="purchase-kpis" id="purchaseKpis"></div>':''}</section>`}
+function filters(type){
+ const roomNames=[...new Set([...rooms.map(r=>r[0]),...data[type].map(x=>x.room).filter(Boolean)])];
+ const selected=roomNames.includes(filterRoom)?filterRoom:'הכל';
+ filterRoom=selected;
+ return `<div class="work-filter-panel noprint"><div class="work-filter-heading"><strong>סינון עבודות לפי חדר</strong><button class="work-filter-reset" type="button" onclick="resetWorkFilters()">ניקוי סינון</button></div><div class="work-room-tabs" role="group" aria-label="סינון עבודות לפי חדר"><button type="button" class="work-room-tab ${selected==='הכל'?'active':''}" aria-pressed="${selected==='הכל'}" onclick="setWorkRoom('הכל')">כל החדרים <span>${data.works.length}</span></button>${roomNames.map((r,i)=>`<button type="button" class="work-room-tab ${selected===r?'active':''}" aria-pressed="${selected===r}" onclick="setWorkRoomByIndex(${i})">${esc(r)} <span>${data.works.filter(x=>x.room===r).length}</span></button>`).join('')}</div><div class="work-search-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="search" aria-label="חיפוש עבודות" placeholder="חיפוש לפי סעיף, קטגוריה או הערות..." value="${esc(search)}" oninput="search=this.value;updateRows('works')"></div><div class="work-filter-count" id="workFilterCount" aria-live="polite"></div></div>`;
+}
+function setWorkRoomByIndex(i){const names=[...new Set([...rooms.map(r=>r[0]),...data.works.map(x=>x.room).filter(Boolean)])];setWorkRoom(names[i]||'הכל')}
+function setWorkRoom(room){filterRoom=room;document.querySelectorAll('.work-room-tab').forEach((b,i)=>{const active=(room==='הכל'?i===0:i===1+[...new Set([...rooms.map(r=>r[0]),...data.works.map(x=>x.room).filter(Boolean)])].indexOf(room));b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});updateRows('works')}
+function resetWorkFilters(){search='';filterRoom='הכל';const input=document.querySelector('#search');if(input)input.value='';setWorkRoom('הכל')}
+function purchaseFilters(){let all=[...new Set([...rooms.map(r=>r[0]),...data.purchases.map(x=>x.room)])];return `<div class="purchase-toolbar noprint"><div class="purchase-toolbar-title">סינון לפי חדר</div><div class="purchase-tabs" role="group" aria-label="סינון רכישות לפי חדר"><button class="purchase-tab ${filterRoom==='הכל'?'active':''}" aria-pressed="${filterRoom==='הכל'}" onclick="setPurchaseRoom('הכל')">כל החדרים <span class="count">${data.purchases.length}</span></button>${all.map(r=>`<button class="purchase-tab ${filterRoom===r?'active':''}" aria-pressed="${filterRoom===r}" onclick="setPurchaseRoom(decodeURIComponent('${encodeURIComponent(r)}'))">${esc(r)} <span class="count">${data.purchases.filter(x=>x.room===r).length}</span></button>`).join('')}</div><div class="purchase-controls"><div class="purchase-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="search" aria-label="חיפוש רכישות" placeholder="חיפוש רהיטים, מוצרים או קטגוריות..." value="${esc(search)}" oninput="search=this.value;updateRows('purchases')"></div><select class="purchase-select" aria-label="סינון לפי סטטוס" onchange="purchaseStatus=this.value;updateRows('purchases')"><option value="הכל" ${purchaseStatus==='הכל'?'selected':''}>כל הסטטוסים</option>${['לבדיקה','אושר','בביצוע','הושלם','בוטל'].map(v=>`<option ${purchaseStatus===v?'selected':''}>${v}</option>`).join('')}</select></div><div class="purchase-kpis" id="purchaseKpis"></div></div><div class="purchase-results"><strong id="purchaseResultsTitle">רשימת רכישות</strong><span id="purchaseResultsCount"></span></div>`}
+function setPurchaseRoom(room){filterRoom=room;let tabs=document.querySelectorAll('.purchase-tab');tabs.forEach(b=>{let active=b.textContent.trim().replace(/\s+\d+$/,'')===(room==='הכל'?'כל החדרים':room);b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});updateRows('purchases')}
+function listing(type){let purchase=type==='purchases';return header(purchase?'רכישות ורהיטים':'עבודות שיפוץ',purchase?'כל הרהיטים והמוצרים לבית — מחולקים לטבלאות לפי חדר.':'כל חדר או אזור בטבלה משלו, כדי שיהיה קל לסרוק ולתמחר.',`<button class="btn primary" onclick="openEditor('${type}')">+ ${purchase?'הוספת רכישה':'הוספת עבודה'}</button>${purchase?'':`<button class="btn" onclick="go('woodwork')">תצוגת נגרות ←</button>`}`)+listFilters(type)+`<div id="groupedTables" class="grouped-tables"></div><p class="hint">לחיצה על שורה פותחת עריכה מלאה. אפשר לשנות עדיפות וסטטוס ישירות בטבלה, ולגרור שורות באותה רמת עדיפות באמצעות הידית שמופיעה במעבר עכבר — בתוך אותה טבלה בלבד.</p>`}
+function rowActionButtons(type,id){return `<span class="row-action-group"><button class="edit-icon-btn" type="button" title="עריכה" aria-label="עריכת סעיף" onclick="event.stopPropagation();openEditor('${type}','${id}')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L9 17l-4 1 1-4Z"/></svg></button><button class="delete-icon-btn" type="button" title="מחיקה" aria-label="מחיקת סעיף" onclick="event.stopPropagation();requestDelete('${type}','${id}')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m5 4v7m4-7v7"/></svg></button></span>`}
+function groupedRow(type,x){return `<tr class="editable-row reorder-row" data-row-id="${esc(x.id)}" tabindex="0" role="button" aria-label="עריכת ${esc(x.name)}" onclick="openEditor('${type}','${x.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEditor('${type}','${x.id}')}"><td><b>${esc(x.name)}</b>${x.notes?`<div class="mini">${esc(x.notes)}</div>`:''}</td><td>${esc(x.category)}</td><td>${inlineSelect(type,x,"priority",["חובה","רצוי","אופציונלי"])}</td><td>${inlineSelect(type,x,"status",["לבדיקה","אושר","בביצוע","הושלם","בוטל"])}</td>${type==='purchases'?`<td class="quantity-cell"><span class="quantity-inline">${inlineNumber(type,x,"quantity")}<span class="quantity-unit">${esc(x.unit||"יח׳")}</span></span></td>`:''}<td class="money-cell">${x.quantity&&x.unitPrice?money(x.quantity*x.unitPrice):'<span class="unpriced-pill">לא תומחר</span>'}</td><td class="action-col"><div class="row-actions-with-drag">${rowActionButtons(type,x.id)}<button type="button" class="drag-handle" draggable="true" aria-label="שינוי סדר השורה" title="גרירה לשינוי סדר" onmousedown="event.stopPropagation()" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="5" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg></button></div></td></tr>`}
+function groupedTable(type,room,items){items=byPriority(items);const purchase=type==='purchases';const total=items.reduce((a,x)=>a+(Number(x.quantity)||0)*(Number(x.unitPrice)||0),0);return `<section class="room-table-section"><div class="room-table-heading"><div class="room-table-title"><span class="room-table-emoji">${rooms.find(r=>r[0]===room)?.[1]||'🏠'}</span><div><h2>${esc(room)}</h2><span>${items.length} ${purchase?'פריטים':'עבודות'}</span></div></div><div class="room-table-actions"><span class="room-table-total">${total?money(total):'<span class="unpriced-pill">טרם תומחר</span>'}</span><button class="room-add-btn" onclick="openEditor('${type}',null,'${esc(room)}')" title="הוספת סעיף לחדר">+ הוספה</button></div></div><div class="tablewrap polished-table room-table-wrap"><table class="data-table ${purchase?'purchase-table':'works-table'}"><colgroup><col style="width:36%"><col style="width:17%"><col style="width:13%"><col style="width:13%">${purchase?'<col style="width:9%">':''}<col style="width:12%"><col style="width:126px"></colgroup><thead><tr><th>סעיף</th><th>קטגוריה</th><th>עדיפות</th><th>סטטוס</th>${purchase?'<th>כמות</th>':''}<th>עלות כוללת</th><th class="action-col" aria-label="עריכה"></th></tr></thead><tbody data-reorder-type="${type}" data-reorder-group="${esc(room)}">${items.map(x=>groupedRow(type,x)).join('')}</tbody></table></div></section>`}
+
+function inlineSelect(type,x,key,options){const tone=key==='priority'?'priority-'+(x[key]||'unknown'):'status-'+(x[key]||'unknown');return `<select class="inline-control inline-${key} ${tone}" aria-label="${key==='priority'?'עדיפות':'סטטוס'}" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()" onchange="inlineUpdate('${type}','${x.id}','${key}',this.value);this.className='inline-control inline-${key} '+('${key}'==='priority'?'priority-':'status-')+this.value">${options.map(o=>`<option value="${o}" ${x[key]===o?'selected':''}>${o}</option>`).join('')}</select>`}
+function inlineNumber(type,x,key){return `<input class="inline-control inline-number" type="number" min="0" step="any" aria-label="כמות" value="${esc(x[key]??'')}" placeholder="—" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()" onchange="inlineUpdate('${type}','${x.id}','${key}',this.value)">`}
+function inlineUpdate(type,id,key,value){const item=data[type]?.find(x=>x.id===id);if(!item)return;if(key==='quantity'&&value!==''&&(!Number.isFinite(Number(value))||Number(value)<0)){alert('יש להזין כמות תקינה');render();return}item[key]=value;save();showToast('השדה עודכן')}
+function updateRows(type){let arr=data[type].filter(x=>(filterRoom==='הכל'||x.room===filterRoom)&&(`${x.room} ${x.name} ${x.category} ${x.notes||''}`).toLocaleLowerCase('he').includes(search.toLocaleLowerCase('he'))&&(purchaseStatus==='הכל'||x.status===purchaseStatus)&&(priorityFilter==='הכל'||x.priority===priorityFilter));{const count=$('#workFilterCount');if(count)count.textContent=`מוצגים ${arr.length} מתוך ${data[type].length} סעיפים`;}if(type==='purchases'){let total=arr.reduce((a,x)=>a+(Number(x.quantity)||0)*(Number(x.unitPrice)||0),0),priced=arr.filter(x=>x.quantity&&x.unitPrice).length;const title=$('#purchaseResultsTitle'),count=$('#purchaseResultsCount'),kpis=$('#purchaseKpis');if(title)title.textContent=filterRoom==='הכל'?'כל הרכישות':`רכישות · ${filterRoom}`;if(count)count.textContent=`${arr.length} פריטים`;if(kpis)kpis.innerHTML=`<div class='purchase-kpi'><div class='value'>${arr.length}</div><div class='label'>פריטים בתצוגה</div></div><div class='purchase-kpi'><div class='value'>${priced} / ${arr.length}</div><div class='label'>פריטים מתומחרים</div></div><div class='purchase-kpi'><div class='value'>${money(total)}</div><div class='label'>סכום מתומחר</div></div>`;}const root=$('#groupedTables');if(!root)return;const ordered=[...rooms.map(r=>r[0]),...new Set(arr.map(x=>x.room).filter(r=>!rooms.some(x=>x[0]===r)))];root.innerHTML=[...floors.map(f=>f.name),'אזורים נוספים'].map(floor=>{const matched=ordered.filter(room=>floorOf(room)===floor&&arr.some(x=>x.room===room));if(!matched.length)return '';return `<section class="floor-table-group"><div class="floor-heading"><span class="floor-symbol">${floor==='קומה תחתונה'?'<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg>':floor==='קומה עליונה'?'<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg>':'<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16m-4-4 4 4 4-4M17 20V4m-4 4 4-4 4 4"/></svg>'}</span><div><h2>${floor}</h2><p>${matched.length} חללים · ${matched.reduce((n,r)=>n+arr.filter(x=>x.room===r).length,0)} סעיפים</p></div></div>${matched.map(room=>groupedTable(type,room,arr.filter(x=>x.room===room))).join('')}</section>`}).join('')||`<div class="panel empty">לא נמצאו סעיפים המתאימים לסינון</div>`}
+
+function budget(){let w=sum(data.works),p=sum(data.purchases),base=w+p,res=base*(Number(data.reserve)||0)/100;return header('תקציב השיפוץ','סיכום עלויות לפי הנתונים שתזינו. סכומים חסרים אינם נחשבים כאפס במחיר ההצעה.')+`<div class="stats"><div class="stat"><div class="lbl">עבודות וחומרים</div><div class="num">${money(w)}</div></div><div class="stat"><div class="lbl">רכישות ורהיטים</div><div class="num">${money(p)}</div></div><div class="stat"><div class="lbl">רזרבה (${data.reserve}%)</div><div class="num">${money(res)}</div></div><div class="stat"><div class="lbl">סה״כ מתומחר</div><div class="num">${money(base+res)}</div></div></div><div class="panel"><b>אחוז רזרבה</b><p><input type="number" min="0" max="100" value="${data.reserve}" onchange="data.reserve=Number(this.value);save()" class="reserve-input"> %</p><p class="hint">הסכום הוא חלקי בלבד: כרגע ${[...data.works,...data.purchases].filter(x=>!x.unitPrice||!x.quantity).length} סעיפים עדיין ללא מחיר או כמות. בדקו אם המחירים כוללים מע״מ, הובלה והתקנה. הימנעו מתמחור כפול של מוצר ועבודת התקנה.</p></div>`}
+function decisionRoomTabs(){const all=[...new Set(data.decisions.map(x=>x.room))];const ordered=[...rooms.map(x=>x[0]).filter(x=>all.includes(x)),...all.filter(x=>!rooms.some(r=>r[0]===x))];return `<div class="decision-room-tabs" id="decisionRoomTabs"><button class="decision-room-tab ${decisionRoom==='הכל'?'selected':''}" onclick="decisionRoom='הכל';updateDecisionRows()">כל החדרים <span>${data.decisions.length}</span></button>${ordered.map(r=>{const info=rooms.find(x=>x[0]===r);return `<button class="decision-room-tab ${decisionRoom===r?'selected':''}" onclick="decisionRoom='${esc(r)}';updateDecisionRows()"><span class="decision-room-icon">${info?info[1]:'🏠'}</span>${esc(r)} <span>${data.decisions.filter(x=>x.room===r).length}</span></button>`}).join('')}</div>`}
+function decisions(){return header('החלטות פתוחות','כל ההחלטות שצריך לסגור כדי להתקדם בשיפוץ — במקום אחד.',`<button class="btn primary" onclick="openEditor('decisions')">+ הוספת החלטה</button>`)+`<div class="decision-stats" id="decisionStats"></div><section class="decision-filter-panel noprint"><div class="decision-filter-heading"><div><strong>לפי חדר או אזור</strong><p>בחרו חדר כדי להתמקד בהחלטות שקשורות אליו</p></div><button class="filter-clear" onclick="decisionRoom='הכל';decisionStatus='הכל';decisionSearch='';render()">ניקוי סינון</button></div>${decisionRoomTabs()}<div class="decision-filter-bottom"><label class="filter-search"><span>⌕</span><input placeholder="חיפוש החלטה או משימה..." value="${esc(decisionSearch)}" oninput="decisionSearch=this.value;updateDecisionRows()"></label><label class="filter-select-wrap"><span>סטטוס</span><select id="decisionStatusSelect" onchange="decisionStatus=this.value;updateDecisionRows()"><option value="הכל">כל הסטטוסים</option>${['פתוח','ממתין','הושלם'].map(v=>`<option value="${v}" ${decisionStatus===v?'selected':''}>${v}</option>`).join('')}</select></label></div></section><div class="decision-results-heading"><div><h2>רשימת החלטות</h2><p id="decisionCount"></p></div></div><div class="tablewrap decision-table-wrap"><table class="decision-table" style="min-width:650px"><thead><tr><th>חדר / אזור</th><th>החלטה / משימה</th><th>סטטוס</th><th>פעולות</th></tr></thead><tbody id="decisionRows" data-reorder-type="decisions" data-reorder-group="all"></tbody></table></div>`}
+function updateDecisionRows(){const root=$('#decisionRows');if(!root)return;const arr=data.decisions.filter(x=>(decisionRoom==='הכל'||x.room===decisionRoom)&&(decisionStatus==='הכל'||x.status===decisionStatus)&&(`${x.name} ${x.room} ${x.notes||''}`).toLocaleLowerCase('he').includes(decisionSearch.toLocaleLowerCase('he')));const count=$('#decisionCount');if(count)count.textContent=`מוצגות ${arr.length} מתוך ${data.decisions.length} החלטות`;const stats=$('#decisionStats');if(stats){const vals=[['סה״כ החלטות',data.decisions.length,'all'],['פתוחות',data.decisions.filter(x=>x.status==='פתוח').length,'open'],['ממתינות',data.decisions.filter(x=>x.status==='ממתין').length,'waiting'],['הושלמו',data.decisions.filter(x=>x.status==='הושלם').length,'done']];stats.innerHTML=vals.map(v=>`<div class="decision-stat decision-stat-${v[2]}"><span>${v[0]}</span><strong>${v[1]}</strong></div>`).join('')}const tabs=$('#decisionRoomTabs');if(tabs){tabs.querySelectorAll('.decision-room-tab').forEach((b,i)=>{const room=i===0?'הכל':[...rooms.map(x=>x[0]).filter(x=>data.decisions.some(d=>d.room===x)),...new Set(data.decisions.map(x=>x.room).filter(x=>!rooms.some(r=>r[0]===x)))][i-1];b.classList.toggle('selected',decisionRoom===room)})}root.innerHTML=arr.map(x=>`<tr class="editable-row reorder-row" data-row-id="${esc(x.id)}" tabindex="0" role="button" onclick="openEditor('decisions','${x.id}')" onkeydown="if(event.key==='Enter'){openEditor('decisions','${x.id}')}" ><td><span class="decision-room-label"><span>${rooms.find(r=>r[0]===x.room)?.[1]||'🏠'}</span>${esc(x.room)}</span></td><td><div class="decision-name">${esc(x.name)}</div>${x.notes?`<div class="decision-note">${esc(x.notes)}</div>`:''}</td><td>${inlineSelect('decisions',x,'status',['פתוח','ממתין','הושלם'])}</td><td><div class="row-actions-with-drag">${rowActionButtons('decisions',x.id)}<button type="button" class="drag-handle" draggable="true" aria-label="שינוי סדר השורה" title="גרירה לשינוי סדר" onmousedown="event.stopPropagation()" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="5" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg></button></div></td></tr>`).join('')||'<tr><td colspan="4" class="empty">אין החלטות שמתאימות לסינון הנוכחי</td></tr>'}
+
+function woodworkPrintView(){
+ const items=byPriority(data.works.filter(x=>String(x.category||'').trim()==='נגרות'));
+ const grouped=[...new Set(items.map(x=>x.room))];
+ const today=new Date().toLocaleDateString('he-IL');
+ return `<div class="woodwork-document" dir="rtl">${header('תצוגת נגרות','בית גירשביץ׳ · מסמך לקבלת הצעת מחיר · '+today,`<button class="btn" onclick="go('works')">חזרה לעבודות שיפוץ</button><button class="btn primary" onclick="window.print()">הדפסה / שמירה כ-PDF ↓</button>`)}
+ <div class="woodwork-intro"><strong>פירוט עבודות נגרות</strong><p>המסמך כולל את כל העבודות שמסווגות בקטגוריית ״נגרות״, לפי חדר. נא להשלים מידות, חומרים, גוונים, פרזול ומפרט לפני הצעת מחיר סופית. המחירים המוצגים הם הערכות שהוזנו במערכת, אם קיימות.</p><div class="woodwork-count">${items.length} עבודות · ${grouped.length} חדרים</div></div>
+ ${grouped.map(room=>`<section class="woodwork-room"><h2>${esc(room)}</h2><table class="woodwork-table"><colgroup><col style="width:7%"><col style="width:39%"><col style="width:12%"><col style="width:25%"><col style="width:17%"></colgroup><thead><tr><th>מס׳</th><th>תיאור העבודה</th><th>עדיפות</th><th>הערות / מפרט</th><th>מחיר מוצע (₪)</th></tr></thead><tbody>${items.filter(x=>x.room===room).map((x,i)=>`<tr><td>${i+1}</td><td><strong>${esc(x.name)}</strong></td><td>${esc(x.priority)}</td><td>${esc(x.notes||'—')}</td><td>${x.unitPrice&&x.quantity?money(x.unitPrice*x.quantity):''}</td></tr>`).join('')}</tbody></table></section>`).join('')}
+ ${!items.length?'<div class="panel">לא נמצאו עבודות בקטגוריית נגרות.</div>':''}
+ <div class="woodwork-footer"><b>הערות להצעת המחיר</b><p>יש לפרט עבור כל סעיף: חומרים, מידות, גימור, פרזול, התקנה, הובלה, מע״מ, אחריות ולוחות זמנים. עבודות נוספות או שינויים יתומחרו בנפרד.</p><div class="woodwork-signature">שם בעל המקצוע: ____________________ &nbsp;&nbsp; תאריך: ______________</div></div></div>`;
+}
+function contractor(){return header('רשימת עבודות לקבלן','טיוטה להצעת מחיר — יש להשלים כמויות, מפרטים ומידות לפני שליחה.',`<button class="btn" onclick="go('woodwork')">תצוגת נגרות ←</button><button class="btn" onclick="window.print()">הדפסה / שמירה כ-PDF</button>`)+`<div class="panel"><b>הערות לקבלן</b><p class="hint">נא לתמחר כל סעיף בנפרד ולציין במפורש מה כלול: עבודה, חומר, פינוי פסולת, הובלה, התקנה, מע״מ ואחריות. יש לסמן סעיפים שמחייבים בדיקת היתכנות או היתר. עבודות אופציונליות יש לתמחר בנפרד.</p></div><div class="tablewrap" style="margin-top:20px"><table><tr><th>חדר</th><th>עבודה</th><th>עדיפות</th><th>כמות</th><th>יחידה</th><th>הערות</th><th>מחיר מוצע (₪)</th></tr>${byPriority(data.works).map(x=>`<tr><td>${esc(x.room)}</td><td>${esc(x.name)}</td><td>${esc(x.priority)}</td><td>${esc(x.quantity)}</td><td>${esc(x.unit)}</td><td>${esc(x.notes)}</td><td>${x.unitPrice?money(x.quantity*x.unitPrice):'________'}</td></tr>`).join('')}</table></div>`}
+function showToast(message,error=false){let stack=document.getElementById('toastStack');if(!stack){stack=document.createElement('div');stack.id='toastStack';stack.setAttribute('aria-live','polite');document.body.appendChild(stack)}const el=document.createElement('div');el.className='app-toast'+(error?' error':'');el.textContent=(error?'⚠ ':'✓ ')+message;stack.appendChild(el);setTimeout(()=>{el.remove()},3200)}
+function requestDelete(type,id){const item=data[type]?.find(x=>x.id===id);if(!item)return;document.getElementById('confirmRoot')?.remove();const shade=document.createElement('div');shade.className='confirm-shade';shade.id='confirmRoot';shade.innerHTML=`<div class="confirm-dialog" role="alertdialog" aria-modal="true" aria-labelledby="deleteTitle"><h3 id="deleteTitle">למחוק את הסעיף?</h3><p>״${esc(item.name)}״ יימחק מהרשימה. לא ניתן לבטל פעולה זו.</p><div class="confirm-actions"><button class="btn" id="cancelDelete">ביטול</button><button class="btn danger" id="confirmDelete">מחיקה</button></div></div>`;document.body.appendChild(shade);shade.addEventListener('click',e=>{if(e.target===shade)shade.remove()});shade.querySelector('#cancelDelete').onclick=()=>shade.remove();shade.querySelector('#confirmDelete').onclick=()=>{data[type]=data[type].filter(x=>x.id!==id);shade.remove();closeModal();save();showToast('הסעיף נמחק')};shade.querySelector('#cancelDelete').focus()}
+function openEditor(type,id=null,room=''){let item=id?data[type].find(x=>x.id===id):null;let x=item||{room:room||rooms[0][0],name:'',category:'',priority:'רצוי',status:type==='decisions'?'פתוח':'לבדיקה',quantity:1,unit:'יח׳',unitPrice:'',notes:'',supplier:'לא נקבע',url:''};let field=(key,label,kind='text',opts=null)=>`<label class="field ${key==='name'||key==='notes'||key==='url'?'wide':''}"><span>${label}</span>${opts?`<select name="${key}">${opts.map(o=>`<option ${x[key]===o?'selected':''}>${esc(o)}</option>`).join('')}</select>`:kind==='textarea'?`<textarea name="${key}" rows="3">${esc(x[key])}</textarea>`:`<input type="${kind}" name="${key}" value="${esc(x[key])}" ${key==='name'?'required':''}>`}</label>`;let html=`<div class="modalshade" onclick="if(event.target===this)closeModal()"><div class="modal"><h2>${item?'עריכת סעיף':'הוספת סעיף חדש'}</h2><form id="editForm" onsubmit="submitEdit(event,'${type}','${id||''}')"><div class="formgrid">${field('room','חדר','text',['כללי',...rooms.map(r=>r[0])])}${field('name','תיאור הסעיף')}${type==='decisions'?field('status','סטטוס','text',['פתוח','ממתין','הושלם']):field('category','קטגוריה')+field('priority','עדיפות','text',['חובה','רצוי','אופציונלי'])+field('status','סטטוס','text',['לבדיקה','אושר','בביצוע','הושלם','בוטל'])+field('quantity','כמות','number')+field('unit','יחידה','text',['יח׳','מ״ר','מ״א','קומפלט','שעה'])+field('unitPrice','מחיר ליחידה (₪)','number')+field('supplier','אחריות אספקה','text',['לא נקבע','קבלן','רכישה עצמאית','נגר','ספק אחר'])}${field('notes','הערות','textarea')}${type==='purchases'?field('url','קישור למוצר'):''}</div><div class="modal-actions"><button type="button" class="btn" onclick="closeModal()">ביטול</button>${item?`<button type="button" class="btn" onclick="removeItem('${type}','${id}')">מחיקה</button>`:''}<button type="submit" class="btn primary">שמירה</button></div></form></div></div>`;$('#modalRoot').innerHTML=html}
+function closeModal(){$('#modalRoot').innerHTML=''}function submitEdit(e,type,id){e.preventDefault();let obj=Object.fromEntries(new FormData(e.target).entries());if(!obj.name.trim())return;obj.id=id||type[0]+Date.now();if(id){let i=data[type].findIndex(x=>x.id===id);data[type][i]=obj}else data[type].push(obj);closeModal();save();showToast(id?'השינויים נשמרו':'הסעיף נוסף')}function removeItem(type,id){requestDelete(type,id)}
+function downloadJSON(obj){const blob=new Blob([JSON.stringify(obj)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='renovation-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000)}
+async function exportData(){try{downloadJSON({...data,inspirations:await dbAll(),backupVersion:2});alert('הגיבוי הורד וכולל גם תמונות שהועלו. שמרו אותו במקום בטוח.')}catch(e){alert('הגיבוי נכשל: '+e.message)}}
+
+
+// Uploaded images live in browser IndexedDB. Export a complete JSON backup regularly.
+let dbPromise;
+function dbOpen(){if(!dbPromise)dbPromise=new Promise((resolve,reject)=>{const req=indexedDB.open('renovationInspirationDB',1);req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains('items'))req.result.createObjectStore('items',{keyPath:'id'})};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});return dbPromise}
+async function dbAll(){const db=await dbOpen();return new Promise((resolve,reject)=>{const req=db.transaction('items','readonly').objectStore('items').getAll();req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+async function dbPut(item){const db=await dbOpen();return new Promise((resolve,reject)=>{const tx=db.transaction('items','readwrite');tx.objectStore('items').put(item);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}
+async function dbDelete(id){const db=await dbOpen();return new Promise((resolve,reject)=>{const tx=db.transaction('items','readwrite');tx.objectStore('items').delete(id);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}
+function inspoPage(){return mediaPage('inspo')}
+function rendersPage(){return mediaPage('renders')}
+function mediaPage(kind){const isRender=kind==='renders';const label=isRender?'הדמיות':'השראות';return header('ספריית '+label,isRender?'ההדמיות של הבית אחרי השיפוץ, מסודרות לפי חדר.':'כל הרעיונות, התמונות והקישורים לבית החדש — במקום אחד.',`<button class="btn" onclick="exportData()">↓ גיבוי מלא</button><button class="btn primary" onclick="openBatchUploader('${kind}')">+ הוספת ${isRender?'הדמיות':'השראות'}</button>`)+`<div class="dropzone" id="pageDrop" onclick="document.getElementById('multiFile').click()" ondragover="dragOverMedia(event)" ondragleave="dragLeaveMedia(event)" ondrop="dropMedia(event,'${kind}')"><strong>גררו לכאן תמונות מהמחשב</strong><small>אפשר להעלות כמה תמונות ביחד · JPG, PNG, WebP · או ללחוץ לבחירת קבצים</small><input id="multiFile" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden onchange="openBatchUploader('${kind}',this.files)"></div><div class="backup-warning">התמונות נשמרות בדפדפן במחשב הזה — לא בתוך קובץ ה-HTML. כדי שלא תאבדו אותן, הורידו מדי פעם גיבוי מלא ושמרו אותו במקום נוסף. מעבר לדפדפן או מחשב אחר דורש ייבוא גיבוי.</div><div class="inspo-toolbar"><label class="filter-search"><span>⌕</span><input placeholder="חיפוש בהערות ובקישורים..." oninput="mediaSearch=this.value;renderInspoCards(false,'${kind}')"></label><select id="inspoFilter" onchange="mediaRoom=this.value;renderInspoCards(false,'${kind}')" class="btn"><option value="הכל">כל החדרים</option>${rooms.map(r=>`<option>${esc(r[0])}</option>`).join('')}</select><button class="btn" onclick="document.getElementById('backupFile').click()">↑ שחזור מגיבוי</button><input id="backupFile" type="file" accept=".json,application/json" style="display:none" onchange="importBackup(this)"></div><div class="inspo-grid" id="inspoCards"></div>`}
+function cardMarkup(x){let picture=x.image?`<img src="${x.image}" alt="${esc(x.title)}" loading="lazy">`:x.url&&/^https?:\/\//i.test(x.url)&&/\.(png|jpe?g|webp|gif)(\?|$)/i.test(x.url)?`<img src="${esc(x.url)}" alt="${esc(x.title)}" loading="lazy" onerror="this.style.display='none'">`:'✦';return `<article class="inspo-card"><div class="inspo-cover">${picture}</div><div class="inspo-body"><span class="inspo-label">${esc(x.room)}</span>${x.title?`<h3 style="margin-top:12px">${esc(x.title)}</h3>`:``}<p>${esc(x.notes||'')}</p><div class="inspo-actions">${x.url&&/^https?:\/\//i.test(x.url)?`<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">פתיחת מקור ↗</a>`:'<span></span>'}<button class="linkbtn" onclick="openInspoEditor('${x.id}','${x.kind||'inspo'}')">עריכה</button></div></div></article>`}
+async function renderInspoCards(roomOnly=false,kind="inspo"){const target=document.getElementById(roomOnly?(kind==='renders'?'roomRenders':'roomInspo'):'inspoCards');if(!target)return;try{const arr=(await dbAll()).filter(x=>(x.kind||"inspo")===kind).filter(x=>roomOnly?x.room===selectedRoom:(mediaRoom==='הכל'||x.room===mediaRoom)&&(`${x.notes||''} ${x.url||''} ${x.room||''}`).toLocaleLowerCase('he').includes(mediaSearch.toLocaleLowerCase('he')));target.innerHTML=arr.length?arr.slice().reverse().map(cardMarkup).join(''):`<div class="inspo-empty">עדיין אין פריטים כאן.<br><br><button class="btn primary" onclick="openBatchUploader('${kind}')">+ הוספת פריט ראשון</button></div>`}catch(e){target.innerHTML='<div class="inspo-empty">לא ניתן לגשת לאחסון בדפדפן הזה. נסו לפתוח ב-Chrome או Safari.</div>'}}
+let batchFiles=[];
+function dragOverMedia(e){e.preventDefault();e.stopPropagation();e.currentTarget.classList.add('dragging')}
+function dragLeaveMedia(e){e.preventDefault();e.currentTarget.classList.remove('dragging')}
+function dropMedia(e,kind){e.preventDefault();e.stopPropagation();e.currentTarget.classList.remove('dragging');openBatchUploader(kind,e.dataTransfer.files)}
+function readMediaFile(file){return new Promise((resolve,reject)=>{if(!['image/jpeg','image/png','image/webp'].includes(file.type))return reject(Error('סוג קובץ לא נתמך: '+file.name));if(file.size>8*1024*1024)return reject(Error('התמונה גדולה מ-8MB: '+file.name));const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('קריאת הקובץ נכשלה'));reader.readAsDataURL(file)})}
+async function openBatchUploader(kind='inspo',files){batchFiles=[];document.getElementById('modalRoot').innerHTML=`<div class="modalshade" onclick="if(event.target===this)closeModal()"><div class="modal wide-modal"><h2>הוספת ${kind==='renders'?'הדמיות':'השראות'}</h2><p class="hint">בחרו כמה תמונות ביחד, הגדירו חדר משותף ואפשר גם לערוך הערה לכל תמונה לפני השמירה.</p><label class="field">חדר לכל התמונות<select id="batchRoom">${rooms.map(r=>`<option ${r[0]===selectedRoom?'selected':''}>${esc(r[0])}</option>`).join('')}</select></label><div class="dropzone" id="modalDrop" onclick="document.getElementById('batchPicker').click()" ondragover="dragOverMedia(event)" ondragleave="dragLeaveMedia(event)" ondrop="dropBatch(event)"><strong>גררו לכאן כמה תמונות או לחצו לבחירה</strong><small>עד 8MB לכל תמונה · ניתן להוסיף קבצים בכמה פעמים</small><input type="file" id="batchPicker" multiple accept="image/jpeg,image/png,image/webp" hidden onchange="appendBatchFiles(this.files);this.value=''" /></div><div class="batch-status" id="batchStatus"></div><div class="batch-grid" id="batchGrid"></div><div class="modal-actions"><button class="btn" onclick="closeModal()">ביטול</button><button class="btn primary" id="batchSave" onclick="saveBatch('${kind}')" disabled>שמירת כל התמונות</button></div></div></div>`;if(files?.length)await appendBatchFiles(files)}
+function dropBatch(e){e.preventDefault();e.stopPropagation();e.currentTarget.classList.remove('dragging');appendBatchFiles(e.dataTransfer.files)}
+async function appendBatchFiles(files){let errors=[];for(const f of Array.from(files)){try{batchFiles.push({image:await readMediaFile(f),name:f.name,notes:'',url:''})}catch(e){errors.push(e.message)}}drawBatch();if(errors.length)alert(errors.join('\n'))}
+function drawBatch(){const grid=document.getElementById('batchGrid');if(!grid)return;grid.innerHTML=batchFiles.map((x,i)=>`<div class="batch-item"><img src="${x.image}" alt=""><div class="field"><textarea placeholder="הערה לתמונה (לא חובה)" oninput="batchFiles[${i}].notes=this.value">${esc(x.notes)}</textarea></div><button class="btn" onclick="batchFiles.splice(${i},1);drawBatch()">הסרה</button></div>`).join('');document.getElementById('batchStatus').textContent=batchFiles.length?`${batchFiles.length} תמונות מוכנות להעלאה`: 'עדיין לא נבחרו תמונות';document.getElementById('batchSave').disabled=!batchFiles.length}
+async function saveBatch(kind){if(!batchFiles.length)return;const btn=document.getElementById('batchSave');btn.disabled=true;btn.textContent='שומר תמונות...';const room=document.getElementById('batchRoom').value;let saved=0;try{for(const f of batchFiles){await dbPut({id:'i'+Date.now()+'_'+Math.random().toString(36).slice(2,9),title:'',kind,room,notes:f.notes,url:'',image:f.image,updatedAt:new Date().toISOString()});saved++}batchFiles=[];closeModal();render();alert(`${saved} תמונות נשמרו בהצלחה`)}catch(err){alert(`${saved} תמונות נשמרו. השמירה נעצרה: ${err.message}`);closeModal();render()}}
+async function openInspoEditor(id='',kind='inspo'){const item=id?(await dbAll()).find(x=>x.id===id):null;if(!item){openBatchUploader(kind);return}const x=item;kind=x.kind||kind;window.editingInspoImage=x.image||'';document.getElementById('modalRoot').innerHTML=`<div class="modalshade" onclick="if(event.target===this)closeModal()"><div class="modal"><h2>עריכת ${kind==='renders'?'הדמיה':'השראה'}</h2><form onsubmit="saveInspo(event,'${id}','${kind}')"><label class="field">חדר<select name="room">${rooms.map(r=>`<option ${r[0]===x.room?'selected':''}>${esc(r[0])}</option>`).join('')}</select></label><label class="field">הערות<textarea name="notes" rows="3">${esc(x.notes||'')}</textarea></label><label class="field">קישור למקור<input name="url" type="url" value="${esc(x.url||'')}" placeholder="https://..."></label><div class="upload-zone" id="editDrop" ondragover="dragOverMedia(event)" ondragleave="dragLeaveMedia(event)" ondrop="dropEditMedia(event)"><strong>החלפת תמונה — אפשר גם לגרור לכאן</strong><p class="hint">לחצו לבחירת תמונה חלופית או גררו קובץ</p><input type="file" accept="image/jpeg,image/png,image/webp" onchange="previewInspoFile(this)"><div id="inspoPreview">${x.image?`<img class="inspo-preview" src="${x.image}">`:''}</div></div><div class="modal-actions"><button type="button" class="btn" onclick="closeModal()">ביטול</button><button type="button" class="btn" onclick="removeInspo('${id}')">מחיקה</button><button class="btn primary" type="submit">שמירת שינויים</button></div></form></div></div>`}
+async function dropEditMedia(e){e.preventDefault();e.stopPropagation();e.currentTarget.classList.remove('dragging');if(e.dataTransfer.files.length)await setEditImage(e.dataTransfer.files[0])}
+async function previewInspoFile(input){if(input.files[0])await setEditImage(input.files[0])}
+async function setEditImage(f){try{const image=await readMediaFile(f);window.editingInspoImage=image;document.getElementById('inspoPreview').innerHTML=`<img class="inspo-preview" src="${image}">`}catch(e){alert(e.message)}}
+async function saveInspo(e,id,kind='inspo'){e.preventDefault();const existing=(await dbAll()).find(x=>x.id===id);const form=new FormData(e.target);const obj={...existing,id,title:'',kind,room:String(form.get('room')),notes:String(form.get('notes')),url:String(form.get('url')),image:window.editingInspoImage||'',updatedAt:new Date().toISOString()};try{await dbPut(obj);closeModal();render();showToast('התמונה נשמרה')}catch(err){alert('השמירה נכשלה: '+err.message)}}
+async function removeInspo(id){if(!confirm('למחוק את ההשראה?'))return;await dbDelete(id);closeModal();render();showToast('התמונה נמחקה')}
+async function importBackup(input){const file=input.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!Array.isArray(obj.works)||!Array.isArray(obj.purchases)||!Array.isArray(obj.decisions))throw Error('מבנה הגיבוי לא תקין');if(!confirm('השחזור יחליף את רשימות השיפוץ הקיימות ואת ספריות ההשראות וההדמיות. להמשיך?'))return;const db=await dbOpen();await new Promise((resolve,reject)=>{const tx=db.transaction('items','readwrite');const store=tx.objectStore('items');store.clear();for(const item of (obj.inspirations||[]))store.put(item);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});data={works:obj.works,purchases:obj.purchases,decisions:obj.decisions,reserve:obj.reserve??15};localStorage.setItem('renovationV1',JSON.stringify(data));render();alert('הגיבוי שוחזר בהצלחה')}catch(err){alert('לא ניתן לשחזר: '+err.message)}finally{input.value=''}}
+
+document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));render();
+
+let activeReorder=null;
+function reorderScope(el){return el.closest('[data-reorder-type]')}
+function reorderRow(el){return el.closest('tr.reorder-row')}
+function clearReorderUI(){document.querySelectorAll('.reorder-row.dragging,.reorder-row.drop-before,.reorder-row.drop-after').forEach(el=>el.classList.remove('dragging','drop-before','drop-after'));activeReorder=null}
+document.addEventListener('dragstart',e=>{
+ const handle=e.target.closest?.('.drag-handle');if(!handle)return;
+ const row=reorderRow(handle),scope=reorderScope(handle);if(!row||!scope){e.preventDefault();return}
+ activeReorder={type:scope.dataset.reorderType,group:scope.dataset.reorderGroup,id:row.dataset.rowId,scope};
+ row.classList.add('dragging');e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',row.dataset.rowId);e.stopPropagation();
+});
+document.addEventListener('dragover',e=>{
+ if(!activeReorder)return;
+ const row=reorderRow(e.target),scope=reorderScope(e.target);
+ document.querySelectorAll('.reorder-row.drop-before,.reorder-row.drop-after').forEach(el=>el.classList.remove('drop-before','drop-after'));
+ if(!row||!scope||scope!==activeReorder.scope||row.dataset.rowId===activeReorder.id){e.dataTransfer.dropEffect='none';return}
+ e.preventDefault();e.dataTransfer.dropEffect='move';
+ const before=e.clientY<row.getBoundingClientRect().top+row.getBoundingClientRect().height/2;
+ row.classList.add(before?'drop-before':'drop-after');
+});
+document.addEventListener('drop',e=>{
+ if(!activeReorder)return;
+ const target=reorderRow(e.target),scope=reorderScope(e.target),state=activeReorder;
+ if(!target||!scope||scope!==state.scope||target.dataset.rowId===state.id){clearReorderUI();return}
+ e.preventDefault();e.stopPropagation();
+ const before=e.clientY<target.getBoundingClientRect().top+target.getBoundingClientRect().height/2;
+ const type=state.type,source=data[type],moving=source.find(x=>String(x.id)===state.id),destination=source.find(x=>String(x.id)===target.dataset.rowId);
+ if(!moving||!destination||(type!=='decisions'&&moving.room!==destination.room)){clearReorderUI();return}
+ // Reorder the complete backing array, even if the view is filtered.
+ const without=source.filter(x=>x!==moving),idx=without.indexOf(destination);
+ without.splice(idx+(before?0:1),0,moving);data[type]=without;
+ clearReorderUI();save();showToast('סדר השורות עודכן');
+});
+document.addEventListener('dragend',clearReorderUI);
+</script></body></html>
