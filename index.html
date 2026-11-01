@@ -574,7 +574,7 @@ async function saveInspo(e,id,kind='inspo'){e.preventDefault();const existing=(a
 async function removeInspo(id){if(!confirm('למחוק את ההשראה?'))return;await dbDelete(id);closeModal();render();showToast('התמונה נמחקה')}
 async function importBackup(input){const file=input.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!Array.isArray(obj.works)||!Array.isArray(obj.purchases)||!Array.isArray(obj.decisions))throw Error('מבנה הגיבוי לא תקין');if(!confirm('השחזור יחליף את רשימות השיפוץ הקיימות ואת ספריות ההשראות וההדמיות. להמשיך?'))return;const db=await dbOpen();await new Promise((resolve,reject)=>{const tx=db.transaction('items','readwrite');const store=tx.objectStore('items');store.clear();for(const item of (obj.inspirations||[]))store.put(item);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});data={works:obj.works,purchases:obj.purchases,decisions:obj.decisions,reserve:obj.reserve??15};localStorage.setItem('renovationV1',JSON.stringify(data));render();alert('הגיבוי שוחזר בהצלחה')}catch(err){alert('לא ניתן לשחזר: '+err.message)}finally{input.value=''}}
 
-document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));render();
+document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
 
 let activeReorder=null;
 function reorderScope(el){return el.closest('[data-reorder-type]')}
@@ -644,5 +644,7 @@ function translateDOM(root){if(siteLanguage!=='ru'||!root)return;const walker=do
 function applyLanguage(){document.documentElement.lang=siteLanguage==='ru'?'ru':'he';document.getElementById('siteLang').value=siteLanguage;document.querySelectorAll('.nav .word,.brand-name,.pref-label').forEach(e=>{const original=e.dataset.heOriginal||(e.dataset.heOriginal=e.textContent);e.textContent=siteLanguage==='ru'?(russianUI[original]||original):original});applyTheme();if(siteLanguage==='ru'){translateDOM(document.getElementById('main'));translateDOM(document.getElementById('modalRoot'));translateDOM(document.getElementById('confirmRoot'))}}
 function setSiteLanguage(lang){siteLanguage=lang==='ru'?'ru':'he';localStorage.setItem('beitSiteLanguage',siteLanguage);render();applyLanguage()}
 const ruObserver=new MutationObserver(changes=>{if(siteLanguage!=='ru')return;for(const c of changes){for(const node of c.addedNodes){if(node.nodeType===1)translateDOM(node);else if(node.nodeType===3){const changed=translateText(node.nodeValue);if(changed!==node.nodeValue)node.nodeValue=changed}}}});ruObserver.observe(document.body,{childList:true,subtree:true});
+// Initialize only after language state, translations and observers are ready.
+render();
 document.addEventListener('DOMContentLoaded',()=>{applyTheme();applyLanguage()});
 </script></body></html>
