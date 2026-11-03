@@ -683,8 +683,6 @@ function openMediaGallery(cover){
 function updateMediaGallery(){const item=mediaGalleryItems[mediaGalleryIndex];if(!item)return;const img=document.getElementById('lightboxImage');img.src=item.src;img.alt=item.alt;document.getElementById('lightboxCaption').textContent=item.room+' · '+(mediaGalleryIndex+1)+' / '+mediaGalleryItems.length;document.querySelectorAll('.lightbox-arrow').forEach(b=>b.hidden=mediaGalleryItems.length<2)}
 function moveMediaGallery(delta){if(!mediaGalleryItems.length)return;mediaGalleryIndex=(mediaGalleryIndex+delta+mediaGalleryItems.length)%mediaGalleryItems.length;updateMediaGallery()}
 function closeMediaGallery(){const el=document.getElementById('mediaLightbox');if(el)el.style.display='none';document.body.classList.remove('lightbox-open');if(mediaGalleryPreviousFocus)mediaGalleryPreviousFocus.focus()}
-document.addEventListener('keydown',e=>{const el=document.getElementById('mediaLightbox');if(!el||el.style.display==='none')return;if(e.key==='Escape'){e.preventDefault();closeMediaGallery()}else if(e.key==='ArrowLeft'){e.preventDefault();moveMediaGallery(-1)}else if(e.key==='ArrowRight'){e.preventDefault();moveMediaGallery(1)}else if(e.key==='Tab'){const buttons=Array.from(el.querySelectorAll('button:not([hidden])'));if(e.shiftKey&&document.activeElement===buttons[0]){e.preventDefault();buttons[buttons.length-1].focus()}else if(!e.shiftKey&&document.activeElement===buttons[buttons.length-1]){e.preventDefault();buttons[0].focus()}}});
-
 let batchFiles=[];
 function dragOverMedia(e){e.preventDefault();e.stopPropagation();e.currentTarget.classList.add('dragging')}
 function dragLeaveMedia(e){e.preventDefault();e.currentTarget.classList.remove('dragging')}
