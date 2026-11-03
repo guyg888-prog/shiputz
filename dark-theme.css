@@ -1,0 +1,82 @@
+/* Renovation dashboard - unified dark theme v2 */
+html.theme-dark{
+ color-scheme:dark;
+ --night:#0e1915;--sidebar:#14231c;--surface:#1b2c23;--surface-2:#23392c;--surface-3:#2c4736;
+ --line:#395544;--line-strong:#567561;--ink:#f0f7f1;--muted:#b8ccbd;
+ --green:#9fe2b0;--green-strong:#34784d;--focus:#b5f3c3;
+ background:var(--night)!important;color:var(--ink)!important;
+}
+html.theme-dark body{background:var(--night)!important;color:var(--ink)!important}
+html.theme-dark .main{background:radial-gradient(ellipse 75% 38% at 50% -12%,#1d3528 0%,transparent 90%),var(--night)!important;color:var(--ink)!important}
+html.theme-dark .side{background:var(--sidebar)!important;border-color:#2c4535!important}
+html.theme-dark .brand,html.theme-dark .brand-name,html.theme-dark .h1,html.theme-dark h1,html.theme-dark h2,html.theme-dark h3,html.theme-dark h4,html.theme-dark .section-title h2,html.theme-dark .room-table-title h2,html.theme-dark .floor-heading h2,html.theme-dark .purchase-toolbar-title,html.theme-dark .filter-heading,html.theme-dark .decision-filter-heading strong,html.theme-dark .decision-results-heading h2{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important}
+html.theme-dark .lead,html.theme-dark .sub,html.theme-dark .eyebrow,html.theme-dark .hint,html.theme-dark .mini,html.theme-dark .room-meta,html.theme-dark .stat .lbl,html.theme-dark .decision-stat span,html.theme-dark .decision-note,html.theme-dark .decision-filter-heading p,html.theme-dark .decision-results-heading p,html.theme-dark .floor-heading p,html.theme-dark .room-table-title span:not(.room-table-emoji),html.theme-dark .woodwork-intro p,html.theme-dark .woodwork-footer,html.theme-dark .contractor-count,html.theme-dark .inspo-body p{color:var(--muted)!important;-webkit-text-fill-color:var(--muted)!important}
+/* Unified surfaces, no white islands */
+html.theme-dark :is(.panel,.stat,.decision-stat,.room,.unified-filters,.decision-filter-panel,.decision-table-wrap,.purchase-toolbar,.purchase-results,.purchase-filter-panel,.tablewrap,.room-table-wrap,.polished-table,.inspo-card,.inspo-empty,.inspo-body,.modal,.confirm-dialog,.woodwork-intro,.woodwork-room,.woodwork-footer,.filter-panel,.note,.edit-preview,.upload-zone,.dropzone,.filter-search,.filter-select-wrap,.work-search-wrap,.purchase-controls,.purchase-search,.purchase-search input,.purchase-tab .count,.room-filter-panel,.summary-card,.filter-card){
+ background:var(--surface)!important;border-color:var(--line)!important;color:var(--ink)!important;
+}
+html.theme-dark :is(.stat,.decision-stat,.panel,.inspo-card,.unified-filters,.decision-filter-panel,.purchase-toolbar){box-shadow:0 10px 30px #0002!important}
+html.theme-dark :is(.stat,.decision-stat){background:linear-gradient(150deg,#21392b 0%,#1a2b22 78%)!important;border:1px solid #43634b!important}
+html.theme-dark .stat:before{background:linear-gradient(90deg,#82c995,#446b51)!important}
+html.theme-dark :is(.stat .num,.decision-stat strong,.edit-preview strong,.edit-preview #editPreviewPrice,.room-name,.decision-name,.decision-room-label,.purchase-toolbar-title,.room-table-total){color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important}
+html.theme-dark .decision-stat-open strong{color:#f6d08e!important;-webkit-text-fill-color:#f6d08e!important}
+html.theme-dark .decision-stat-waiting strong{color:#bbd3ff!important;-webkit-text-fill-color:#bbd3ff!important}
+html.theme-dark .decision-stat-done strong{color:#a9edbd!important;-webkit-text-fill-color:#a9edbd!important}
+html.theme-dark .room .art,html.theme-dark .room:nth-child(3n+2) .art,html.theme-dark .room:nth-child(3n+3) .art,html.theme-dark .detail-art{background:linear-gradient(125deg,#31483b,#263b30)!important}
+html.theme-dark .room-body{background:var(--surface)!important}
+html.theme-dark .floor-section .rooms .room :is(.room-name,.room-meta,.pill){-webkit-text-fill-color:currentColor!important}
+html.theme-dark .room-name{color:var(--ink)!important}
+html.theme-dark .room-meta{color:var(--muted)!important}
+html.theme-dark .room-table-emoji,html.theme-dark .floor-symbol{background:#304b3a!important;color:#e5f5e8!important}
+/* Tables and contractor/woodwork documents: all cells inherit dark backgrounds */
+html.theme-dark :is(table,.data-table,.decision-table,.woodwork-table,.room-table-wrap table,.contractor-room table){background:var(--surface)!important;border-color:var(--line)!important}
+html.theme-dark :is(table,.data-table,.decision-table,.woodwork-table) :is(thead,tbody,tr){background:transparent!important}
+html.theme-dark :is(table,.data-table,.decision-table,.woodwork-table) th{background:#2a4434!important;color:#eef7ef!important;-webkit-text-fill-color:#eef7ef!important;border-color:var(--line-strong)!important}
+html.theme-dark :is(table,.data-table,.decision-table,.woodwork-table) tbody tr td{background:#1b2c23!important;color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;border-color:var(--line)!important}
+html.theme-dark :is(table,.data-table,.decision-table,.woodwork-table) tbody tr:nth-child(even) td{background:#213529!important}
+html.theme-dark :is(table,.data-table,.decision-table,.woodwork-table) tbody tr:hover td{background:#304c39!important}
+html.theme-dark :is(table,.data-table,.decision-table,.woodwork-table) td :is(.mini,.decision-note,small){color:var(--muted)!important;-webkit-text-fill-color:var(--muted)!important}
+html.theme-dark :is(.woodwork-intro,.woodwork-footer,.woodwork-room,.woodwork-table){background:var(--surface)!important;color:var(--ink)!important;border-color:var(--line)!important}
+html.theme-dark .woodwork-table td :is(span,p,div,strong){color:inherit!important;-webkit-text-fill-color:currentColor!important}
+/* Filters, controls and inputs */
+html.theme-dark :is(.room-filter-tab,.decision-room-tab,.purchase-tab,.filter-clear,.back,.edit-icon-btn,.delete-icon-btn,.media-edit-icon,.dialog-close){background:var(--surface-2)!important;color:#e5f3e8!important;-webkit-text-fill-color:#e5f3e8!important;border-color:var(--line)!important}
+html.theme-dark :is(.room-filter-tab,.decision-room-tab,.purchase-tab,.back,.edit-icon-btn,.delete-icon-btn,.media-edit-icon,.dialog-close):hover{background:var(--surface-3)!important;color:white!important}
+html.theme-dark :is(.room-filter-tab.active,.decision-room-tab.selected,.purchase-tab.active,.nav button.active){background:#326f49!important;color:white!important;-webkit-text-fill-color:white!important;border-color:#65a77a!important}
+html.theme-dark :is(.room-tab-count,.decision-room-tab>span:last-child,.purchase-tab .count,.inspo-label,.tag,.pill){background:#314d3b!important;color:#e3f4e7!important;-webkit-text-fill-color:#e3f4e7!important;border-color:#54745c!important}
+html.theme-dark :is(.decision-room-tab.selected>span:last-child,.purchase-tab.active .count){background:#245b3b!important;color:white!important}
+html.theme-dark :is(input:not([type=checkbox]):not([type=radio]),textarea,select,.reserve-input,.field input,.field select,.field textarea){background-color:#243a2d!important;color:#f2faf3!important;-webkit-text-fill-color:#f2faf3!important;border-color:#587260!important;opacity:1!important}
+html.theme-dark :is(input,textarea)::placeholder{color:#b6cdbb!important;opacity:1!important}
+html.theme-dark :is(.filter-search input,.work-search-wrap input,.purchase-search input){background:transparent!important;border-color:transparent!important;color:#f2faf3!important;-webkit-text-fill-color:#f2faf3!important}
+html.theme-dark :is(.inline-control,select.inline-control:not([multiple]),.inline-number){background:transparent!important;color:#f0f7f1!important;-webkit-text-fill-color:#f0f7f1!important;border-color:transparent!important}
+html.theme-dark :is(.inline-control,select.inline-control:not([multiple]),.inline-number):is(:hover,:focus,:focus-visible){background:#35513e!important;border-color:#71957a!important}
+html.theme-dark select:not([multiple]):hover{background-color:#35513e!important}
+html.theme-dark :is(.btn,.modal-actions .btn,.confirm-actions .btn){background:#294332!important;color:#eff9f1!important;-webkit-text-fill-color:#eff9f1!important;border-color:#63816b!important}
+html.theme-dark :is(.btn.primary,.modal-actions .btn.primary,.confirm-actions .btn.primary){background:#377e51!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-color:#76b68a!important}
+html.theme-dark :is(.btn.danger,.confirm-actions .btn.danger){background:#a4444a!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-color:#cb7c83!important}
+html.theme-dark :is(.btn,.nav button,.room-filter-tab,.decision-room-tab,.purchase-tab):hover{filter:brightness(1.13)}
+html.theme-dark :is(a,.linkbtn,.filter-clear){color:#ace9bc!important}
+html.theme-dark :is(a,.linkbtn):hover{color:#d7f8df!important}
+html.theme-dark :is(.modal-actions,.modal>form>.modal-actions){background:var(--surface)!important;border-color:var(--line)!important}
+html.theme-dark .confirm-dialog p{color:var(--muted)!important}
+html.theme-dark .site-preferences select,html.theme-dark .site-preferences .theme-switch{background:transparent!important;border-color:transparent!important;color:#bfd4c3!important;-webkit-text-fill-color:#bfd4c3!important}
+html.theme-dark .site-preferences select:hover,html.theme-dark .site-preferences .theme-switch:hover{background:#2d4636!important;color:white!important;-webkit-text-fill-color:white!important}
+/* Status and priority badges need semantic contrast, not pale light-mode chips */
+html.theme-dark :is(.tag.wait,.status-פתוח,.status-לבדיקה,select.status-פתוח,select.status-לבדיקה){background:#51402a!important;color:#ffdfa3!important;-webkit-text-fill-color:#ffdfa3!important}
+html.theme-dark :is(.tag.approved,.status-אושר,.status-הושלם,select.status-אושר,select.status-הושלם){background:#24503a!important;color:#b0f0c5!important;-webkit-text-fill-color:#b0f0c5!important}
+html.theme-dark :is(.status-בביצוע,select.status-בביצוע,.priority-רצוי,select.priority-רצוי){background:#294760!important;color:#c5e2ff!important;-webkit-text-fill-color:#c5e2ff!important}
+html.theme-dark :is(.status-ממתין,select.status-ממתין){background:#473851!important;color:#e7cfff!important;-webkit-text-fill-color:#e7cfff!important}
+html.theme-dark :is(.status-בוטל,select.status-בוטל){background:#5a3035!important;color:#ffbdc2!important;-webkit-text-fill-color:#ffbdc2!important}
+html.theme-dark :is(.priority-חובה,select.priority-חובה){background:#573b2b!important;color:#ffd0a8!important;-webkit-text-fill-color:#ffd0a8!important}
+html.theme-dark :is(.priority-אופציונלי,select.priority-אופציונלי){background:#37433f!important;color:#d4e1d7!important;-webkit-text-fill-color:#d4e1d7!important}
+html.theme-dark :is(.data-table select.inline-control[class*="status-"],.data-table select.inline-control[class*="priority-"],.decision-table select.inline-status){border:1px solid #ffffff24!important}
+html.theme-dark :is(button,a,input,select,textarea,[tabindex]):focus-visible{outline:2px solid var(--focus)!important;outline-offset:2px!important;box-shadow:0 0 0 4px #0b1b11!important}
+html.theme-dark .inspo-cover{background:#2a4032!important}
+html.theme-dark .inspo-cover img{background:transparent!important}
+html.theme-dark .media-lightbox{background:rgba(5,12,9,.96)!important}
+/* Keep PDF/print documents legible irrespective of chosen UI theme */
+@media print{
+ html.theme-dark,html.theme-dark body,html.theme-dark .main{background:white!important;color:#111!important}
+ html.theme-dark :is(.woodwork-document,.woodwork-intro,.woodwork-room,.woodwork-table,.contractor-room,.tablewrap,table){background:white!important;color:#111!important}
+ html.theme-dark :is(.woodwork-table,.contractor-room table,table) :is(th,td,tbody tr td,tbody tr:nth-child(even) td){background:white!important;color:#111!important;-webkit-text-fill-color:#111!important;border-color:#bbb!important}
+ html.theme-dark :is(.woodwork-table,.contractor-room table,table) td :is(span,p,div,strong){color:#111!important;-webkit-text-fill-color:#111!important}
+}
