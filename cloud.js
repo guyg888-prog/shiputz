@@ -275,7 +275,7 @@
         headers: {
           ...headers(),
           'Content-Type': blob.type,
-          'x-upsert': 'true'
+          ...(cache?.some(x => x.id === id) ? { 'x-upsert': 'true' } : {})
         },
         body: blob,
         signal: controller.signal
