@@ -103,18 +103,22 @@
   function headers() {
     return {
       apikey: KEY,
-      Authorization: undefined
+      ...(session?.access_token && session.access_token !== KEY ? { Authorization: 'Bearer ' + session.access_token } : {})
     };
   }
 
   async function request(url, options = {}) {
-    const response = await fetch(url, {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 25000);
+    let response;
+    try { response = await fetch(url, {
+      signal: controller.signal,
       ...options,
       headers: {
         ...headers(),
         ...(options.headers || {})
       }
-    });
+    }); } catch (error) { throw Error(error.name === 'AbortError' ? 'תם הזמן המוקצב לחיבור לענן. נסו שוב.' : 'שגיאת רשת: ' + error.message); } finally { clearTimeout(timer); }
 
     if (!response.ok) {
       const message = await response.text();
@@ -261,7 +265,10 @@
 
     const path = id + '.' + extension;
 
-    const response = await fetch(
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 45000);
+    let response;
+    try { response = await fetch(
       BASE + '/storage/v1/object/' + BUCKET + '/' + path,
       {
         method: 'POST',
@@ -270,9 +277,10 @@
           'Content-Type': blob.type,
           'x-upsert': 'true'
         },
-        body: blob
+        body: blob,
+        signal: controller.signal
       }
-    );
+    ); } catch(error) { throw Error(error.name === 'AbortError' ? 'העלאת התמונה ארכה יותר מ-45 שניות. בדקו את החיבור ונסו שוב.' : 'שגיאת רשת בהעלאת התמונה: ' + error.message); } finally { clearTimeout(timer); }
 
     if (!response.ok) {
       throw Error(
@@ -294,7 +302,8 @@
       ? item.id
       : crypto.randomUUID();
 
-    const existing = (await cloudAll()).find(x => x.id === id);
+    // New uploads must not wait for fetching/signing every existing image.
+    const existing = cache?.find(x => x.id === id);
 
     let path =
       item.storagePath ||
