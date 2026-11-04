@@ -695,7 +695,7 @@ function mediaRailMarkup(room,items,kind){
  const floor=floorOf(room);
  return `<section class="media-room-rail" aria-label="תמונות: ${esc(room)}">
  <div class="media-rail-header"><div class="media-rail-heading"><span class="media-rail-room-icon">${roomIcon(room)}</span><div><h2>${esc(room)}</h2><span>${floor} · ${items.length} ${items.length===1?'תמונה':'תמונות'}</span></div></div>
- <div class="media-rail-controls"><button type="button" aria-label="גלילה ימינה ב${esc(room)}" onclick="scrollMediaRail(this,-1)">❯</button><button type="button" aria-label="גלילה שמאלה ב${esc(room)}" onclick="scrollMediaRail(this,1)">❮</button></div></div>
+ <div class="media-rail-controls"><button type="button" aria-label="גלילה ימינה ב${esc(room)}" onclick="scrollMediaRail(this,-1)">❮</button><button type="button" aria-label="גלילה שמאלה ב${esc(room)}" onclick="scrollMediaRail(this,1)">❯</button></div></div>
  <div class="media-rail-track" tabindex="0" aria-label="גלריית ${esc(room)}">${items.map(cardMarkup).join('')}</div>
  </section>`;
 }
