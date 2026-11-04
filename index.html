@@ -749,7 +749,7 @@ async function openBatchUploader(kind='inspo',files){batchFiles=[];document.getE
 function dropBatch(e){e.preventDefault();e.stopPropagation();e.currentTarget.classList.remove('dragging');appendBatchFiles(e.dataTransfer.files)}
 async function appendBatchFiles(files){let errors=[];for(const f of Array.from(files)){try{batchFiles.push({image:await readMediaFile(f),name:f.name,notes:'',url:''})}catch(e){errors.push(e.message)}}drawBatch();if(errors.length)alert(errors.join('\n'))}
 function drawBatch(){const grid=document.getElementById('batchGrid');if(!grid)return;grid.innerHTML=batchFiles.map((x,i)=>`<div class="batch-item"><img src="${x.image}" alt=""><div class="field"><textarea placeholder="הערה לתמונה (לא חובה)" oninput="batchFiles[${i}].notes=this.value">${esc(x.notes)}</textarea></div><button class="btn" onclick="batchFiles.splice(${i},1);drawBatch()">הסרה</button></div>`).join('');document.getElementById('batchStatus').textContent=batchFiles.length?`${batchFiles.length} תמונות מוכנות להעלאה`: 'עדיין לא נבחרו תמונות';document.getElementById('batchSave').disabled=!batchFiles.length}
-async async function saveBatch(kind){
+async function saveBatch(kind){
  if(!batchFiles.length)return;
  const btn=document.getElementById('batchSave');
  if(!btn||btn.disabled)return;
