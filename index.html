@@ -749,7 +749,33 @@ async function openBatchUploader(kind='inspo',files){batchFiles=[];document.getE
 function dropBatch(e){e.preventDefault();e.stopPropagation();e.currentTarget.classList.remove('dragging');appendBatchFiles(e.dataTransfer.files)}
 async function appendBatchFiles(files){let errors=[];for(const f of Array.from(files)){try{batchFiles.push({image:await readMediaFile(f),name:f.name,notes:'',url:''})}catch(e){errors.push(e.message)}}drawBatch();if(errors.length)alert(errors.join('\n'))}
 function drawBatch(){const grid=document.getElementById('batchGrid');if(!grid)return;grid.innerHTML=batchFiles.map((x,i)=>`<div class="batch-item"><img src="${x.image}" alt=""><div class="field"><textarea placeholder="הערה לתמונה (לא חובה)" oninput="batchFiles[${i}].notes=this.value">${esc(x.notes)}</textarea></div><button class="btn" onclick="batchFiles.splice(${i},1);drawBatch()">הסרה</button></div>`).join('');document.getElementById('batchStatus').textContent=batchFiles.length?`${batchFiles.length} תמונות מוכנות להעלאה`: 'עדיין לא נבחרו תמונות';document.getElementById('batchSave').disabled=!batchFiles.length}
-async async function saveBatch(kind){if(!batchFiles.length)return;const btn=document.getElementById('batchSave');btn.disabled=true;btn.textContent='שומר תמונות...';const room=document.getElementById('batchRoom').value;let saved=0;try{for(const f of batchFiles){await dbPut({id:'i'+Date.now()+'_'+Math.random().toString(36).slice(2,9),title:'',kind,room,notes:f.notes,url:'',image:f.image,updatedAt:new Date().toISOString()});saved++}batchFiles=[];closeModal();render();showToast(`${saved} תמונות נשמרו בהצלחה`)}catch(err){showToast(`${saved} תמונות נשמרו. השמירה נעצרה: ${err.message}`,true);closeModal();render()}}
+async async function saveBatch(kind){
+ if(!batchFiles.length)return;
+ const btn=document.getElementById('batchSave');
+ if(!btn||btn.disabled)return;
+ btn.disabled=true;btn.textContent='שומר תמונות...';
+ const room=document.getElementById('batchRoom')?.value||rooms[0][0];
+ let saved=0;
+ try{
+  for(const f of batchFiles){
+   await dbPut({id:'i'+Date.now()+'_'+Math.random().toString(36).slice(2,9),title:'',kind,room,notes:f.notes,url:'',image:f.image,updatedAt:new Date().toISOString()});
+   saved++;
+   const status=document.getElementById('batchStatus');
+   if(status)status.textContent='נשמרו '+saved+' מתוך '+batchFiles.length+' תמונות';
+  }
+  batchFiles=[];closeModal();render();showToast(saved+' תמונות נשמרו בהצלחה');
+ }catch(err){
+  console.error('Image upload failed:',err);
+  batchFiles=batchFiles.slice(saved);
+  drawBatch();
+  const status=document.getElementById('batchStatus');
+  if(status)status.textContent='השמירה נכשלה: '+(err.message||'שגיאה לא ידועה')+' · אפשר לנסות שוב';
+  showToast('העלאת התמונות נכשלה. הפרטים מופיעים בחלון ההעלאה.',true);
+ }finally{
+  const current=document.getElementById('batchSave');
+  if(current){current.disabled=!batchFiles.length;current.textContent='שמירת כל התמונות'}
+ }
+}
 async function openInspoEditor(id='',kind='inspo'){const item=id?(await dbAll()).find(x=>x.id===id):null;if(!item){openBatchUploader(kind);return}const x=item;kind=x.kind||kind;window.editingInspoImage=x.image||'';document.getElementById('modalRoot').innerHTML=`<div class="modalshade" onclick="if(event.target===this)closeModal()"><div class="modal"><h2>עריכת ${kind==='renders'?'הדמיה':'השראה'}</h2><form onsubmit="saveInspo(event,'${id}','${kind}')"><label class="field">חדר<select name="room">${rooms.map(r=>`<option ${r[0]===x.room?'selected':''}>${esc(r[0])}</option>`).join('')}</select></label><label class="field">הערות<textarea name="notes" rows="3">${esc(x.notes||'')}</textarea></label><label class="field">קישור למקור<input name="url" type="url" value="${esc(x.url||'')}" placeholder="https://..."></label><div class="upload-zone" id="editDrop" ondragover="dragOverMedia(event)" ondragleave="dragLeaveMedia(event)" ondrop="dropEditMedia(event)"><strong>החלפת תמונה — אפשר גם לגרור לכאן</strong><p class="hint">לחצו לבחירת תמונה חלופית או גררו קובץ</p><input type="file" accept="image/jpeg,image/png,image/webp" onchange="previewInspoFile(this)"><div id="inspoPreview">${x.image?`<img class="inspo-preview" src="${x.image}">`:''}</div></div><div class="modal-actions"><button type="button" class="btn" onclick="closeModal()">ביטול</button><button type="button" class="btn" onclick="removeInspo('${id}')">מחיקה</button><button class="btn primary" type="submit">שמירת שינויים</button></div></form></div></div>`}
 async function dropEditMedia(e){e.preventDefault();e.stopPropagation();e.currentTarget.classList.remove('dragging');if(e.dataTransfer.files.length)await setEditImage(e.dataTransfer.files[0])}
 async function previewInspoFile(input){if(input.files[0])await setEditImage(input.files[0])}
