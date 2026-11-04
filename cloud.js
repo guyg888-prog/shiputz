@@ -381,30 +381,10 @@
   window.dbPut = cloudPut;
   window.dbDelete = cloudDelete;
 
-  function status(text) {
-    let element = document.getElementById('familyCloudStatus');
-
-    if (!element) {
-      element = document.createElement('button');
-      element.id = 'familyCloudStatus';
-      document.body.appendChild(element);
-
-      element.onclick = () => {
-        if (session) {
-          if (confirm('להתנתק מהחשבון המשפחתי?')) {
-            session = null;
-            cache = null;
-            sessionStorage.removeItem(sessionKey);
-            status('☁ התחברות לענן');
-            login();
-          }
-        } else {
-          login();
-        }
-      };
-    }
-
-    element.textContent = text;
+  // Cloud status is logged instead of occupying the toast notification area.
+  function status(message) {
+    document.getElementById('familyCloudStatus')?.remove();
+    if (message.includes('שגיאה')) console.warn('Cloud status:', message);
   }
 
   function login(message = '') {
