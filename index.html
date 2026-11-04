@@ -770,7 +770,15 @@ async function saveBatch(kind){
  let saved=0;
  try{
   for(const f of batchFiles){
-   await dbPut({id:'i'+Date.now()+'_'+Math.random().toString(36).slice(2,9),title:'',kind,room,notes:f.notes,url:'',image:f.image,updatedAt:new Date().toISOString()});
+   const progressEl=document.getElementById('batchStatus');
+   if(progressEl)progressEl.textContent='מעלה תמונה '+(saved+1)+' מתוך '+batchFiles.length+'...';
+   let timeoutId;
+   try {
+    await Promise.race([
+     Promise.resolve().then(()=>dbPut({id:'i'+Date.now()+'_'+Math.random().toString(36).slice(2,9),title:'',kind,room,notes:f.notes,url:'',image:f.image,updatedAt:new Date().toISOString()})),
+     new Promise((_,reject)=>{timeoutId=setTimeout(()=>reject(new Error('השרת לא השיב בתוך 55 שניות. ייתכן שיש בעיית הרשאות או תקשורת עם Supabase.')),55000)})
+    ]);
+   } finally {clearTimeout(timeoutId);}
    saved++;
    const status=document.getElementById('batchStatus');
    if(status)status.textContent='נשמרו '+saved+' מתוך '+batchFiles.length+' תמונות';
