@@ -107,26 +107,27 @@
     };
   }
 
-  async function request(url, options = {}) {
+  async function request(url, options = {}, timeout = 25000) {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 25000);
-    let response;
-    try { response = await fetch(url, {
-      signal: controller.signal,
-      ...options,
-      headers: {
-        ...headers(),
-        ...(options.headers || {})
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal,
+        headers: { ...headers(), ...(options.headers || {}) }
+      });
+      // Keep the deadline active until the response body has finished too.
+      const text = await response.text();
+      if (!response.ok) {
+        throw Error(`Supabase HTTP ${response.status}: ` + (text.slice(0, 350) || response.statusText));
       }
-    }); } catch (error) { throw Error(error.name === 'AbortError' ? 'תם הזמן המוקצב לחיבור לענן. נסו שוב.' : 'שגיאת רשת: ' + error.message); } finally { clearTimeout(timer); }
-
-    if (!response.ok) {
-      const message = await response.text();
-      throw Error(message.slice(0, 350) || `HTTP ${response.status}`);
+      return text ? JSON.parse(text) : null;
+    } catch (error) {
+      if (error.name === 'AbortError') throw Error('תם הזמן המוקצב לחיבור לענן. נסו שוב.');
+      throw error;
+    } finally {
+      clearTimeout(timer);
     }
-
-    const text = await response.text();
-    return text ? JSON.parse(text) : null;
   }
 
   function persist(data) {
@@ -190,50 +191,55 @@
     }
   }
 
-  async function signed(path) {
-    const result = await authRequest(
-      BASE + '/storage/v1/object/sign/' + BUCKET + '/' + path,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          expiresIn: 3600
-        })
-      }
-    );
-
-    return BASE + '/storage/v1' + result.signedURL;
-  }
+  let loading = null;
+  let cacheGeneration = 0;
 
   async function cloudAll() {
     if (!session) return original.all();
-
     if (cache && Date.now() - cacheTime < 20 * 60 * 1000) return cache;
-
-    const rows = await authRequest(
-      BASE + '/rest/v1/renovation_media?select=*&order=updated_at.asc'
-    );
-
-    cache = await Promise.all(
-      rows.map(async item => ({
-        id: item.id,
-        kind: item.kind,
-        room: item.room || '',
-        title: item.title || '',
-        notes: item.notes || '',
-        url: item.source_url || '',
-        storagePath: item.storage_path,
-        image: item.storage_path
-          ? await signed(item.storage_path)
-          : '',
+    if (loading) return loading;
+    const generation = cacheGeneration;
+    const pending = (async () => {
+      const rows = await authRequest(
+        BASE + '/rest/v1/renovation_media?select=*&order=updated_at.asc'
+      );
+      const paths = [...new Set(rows.map(item => item.storage_path).filter(Boolean))];
+      // One signing request, rather than a burst of requests for every image.
+      const signedRows = paths.length ? await authRequest(
+        BASE + '/storage/v1/object/sign/' + BUCKET,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ expiresIn: 3600, paths })
+        }
+      ) : [];
+      const urls = new Map(signedRows.map(item => {
+        if (item.error) console.warn('Could not sign image:', item.path, item.error);
+        return [item.path, item.signedURL ? BASE + '/storage/v1' + item.signedURL : ''];
+      }));
+      const result = rows.map(item => ({
+        id: item.id, kind: item.kind, room: item.room || '',
+        title: item.title || '', notes: item.notes || '', url: item.source_url || '',
+        storagePath: item.storage_path, image: urls.get(item.storage_path) || '',
         updatedAt: item.updated_at
-      }))
-    );
+      }));
+      // A read started before a save must not repopulate an invalidated cache.
+      if (generation === cacheGeneration) {
+        cache = result;
+        cacheTime = Date.now();
+      }
+      return result;
+    })();
+    loading = pending;
+    try { return await pending; }
+    finally { if (loading === pending) loading = null; }
+  }
 
-    cacheTime = Date.now();
-    return cache;
+  function invalidateCache() {
+    cacheGeneration++;
+    cache = null;
+    cacheTime = 0;
+    loading = null;
   }
 
   function asBlob(data) {
@@ -265,29 +271,16 @@
 
     const path = id + '.' + extension;
 
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 45000);
-    let response;
-    try { response = await fetch(
-      BASE + '/storage/v1/object/' + BUCKET + '/' + path,
-      {
-        method: 'POST',
-        headers: {
-          ...headers(),
-          'Content-Type': blob.type,
-          ...(cache?.some(x => x.id === id) ? { 'x-upsert': 'true' } : {})
-        },
-        body: blob,
-        signal: controller.signal
-      }
-    ); } catch(error) { throw Error(error.name === 'AbortError' ? 'העלאת התמונה ארכה יותר מ-45 שניות. בדקו את החיבור ונסו שוב.' : 'שגיאת רשת בהעלאת התמונה: ' + error.message); } finally { clearTimeout(timer); }
-
-    if (!response.ok) {
-      throw Error(
-        'העלאת התמונה נכשלה: ' +
-        (await response.text()).slice(0, 220)
-      );
-    }
+    // Match Supabase's browser upload protocol. Sending a raw image body
+    // stalls on this Storage endpoint; multipart uploads complete successfully.
+    const form = new FormData();
+    form.append('cacheControl', '3600');
+    form.append('', blob, path);
+    await request(BASE + '/storage/v1/object/' + BUCKET + '/' + path, {
+      method: 'POST',
+      headers: cache?.some(x => x.id === id) ? { 'x-upsert': 'true' } : {},
+      body: form
+    }, 45000);
 
     return path;
   }
@@ -337,8 +330,7 @@
       }
     );
 
-    cache = null;
-    cacheTime = 0;
+    invalidateCache();
   }
 
   async function cloudDelete(id) {
@@ -373,8 +365,7 @@
       }
     }
 
-    cache = null;
-    cacheTime = 0;
+    invalidateCache();
   }
 
   window.dbAll = cloudAll;
