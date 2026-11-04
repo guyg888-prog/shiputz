@@ -24,7 +24,7 @@ window.openMediaGallery=async function(cover,editing=false){
  if(source.id==='inspoCards'){
   try{
    const stored=(await dbAll()).filter(x=>(x.kind||'inspo')===kind);
-   allItems=stored.slice().reverse().map(x=>({id:String(x.id),kind,src:x.image||(/^https?:\\/\\//i.test(x.url||'')?x.url:''),title:x.title||'',room:x.room||'',notes:x.notes||'',url:x.url||''})).filter(x=>x.src);
+   allItems=stored.slice().reverse().map(x=>({id:String(x.id),kind,src:x.image||((x.url||'').startsWith('https://')||(x.url||'').startsWith('http://')?x.url:''),title:x.title||'',room:x.room||'',notes:x.notes||'',url:x.url||''})).filter(x=>x.src);
   }catch(e){allItems=cardItems}
  }
  const chosen=allItems.find(x=>x.id===selectedId);
