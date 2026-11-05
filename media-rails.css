@@ -25,3 +25,11 @@ html.theme-dark .media-rail-controls button{background:#23392c;border-color:#4b6
 html.theme-dark .media-rail-controls button:hover{background:#365640}
 html.theme-dark .media-rail-track{scrollbar-color:#587a61 transparent}
 @media(max-width:700px){#inspoCards.media-rails{gap:22px!important}.media-rail-track .inspo-card{flex-basis:230px;width:230px}.media-rail-track .inspo-cover{height:165px!important;min-height:165px!important}.media-rail-controls button{width:33px;height:33px}.media-rail-heading h2{font-size:18px}}
+
+/* Image-first tiles: remove the empty footer left by legacy action buttons. */
+.media-rail-track .inspo-card{position:relative;flex:0 0 clamp(240px,27vw,325px);width:clamp(240px,27vw,325px)}
+.media-rail-track .inspo-cover{height:225px!important;min-height:225px!important}
+.media-rail-track .inspo-card:not(:has(.inspo-body h3,.inspo-body p,.inspo-body a)) .inspo-body{position:absolute;inset:0;pointer-events:none;padding:0!important;display:block;flex:none;background:transparent}
+.media-rail-track .inspo-card:not(:has(.inspo-body h3,.inspo-body p,.inspo-body a)) .inspo-card-topline{position:absolute;top:10px;inset-inline-end:10px;pointer-events:auto}
+.media-rail-track .inspo-card:not(:has(.inspo-body h3,.inspo-body p,.inspo-body a)) .inspo-actions{display:none!important}
+@media(max-width:700px){.media-rail-track .inspo-card{flex-basis:260px;width:260px}.media-rail-track .inspo-cover{height:195px!important;min-height:195px!important}}
