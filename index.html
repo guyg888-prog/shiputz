@@ -778,7 +778,7 @@ function virtualPage(){
  const roomMeasures=floor?{living:[510,397],kitchen:[250,360],dining:[160,245],storage:[315,305],wc:[155,115]}:{parents:[395,285],bedroom2:[285,330],bedroom3:[305,325],bedroom4:[355,275],closet:[145,170],bath:[315,220]};
  const rects=shapes.map(([x,y,w,h,label,key])=>{
   const measure=roomMeasures[key],name=label.split(' · ')[0],fontSize=w<145?11:14;
-  const dimensionLines=measure?`<g class="virtual-wall-measures" aria-hidden="true"><text x="${x+w/2}" y="${y+3}" text-anchor="middle">${measure[0]} ס״מ</text><text transform="translate(${x+w-3} ${y+h/2}) rotate(-90)" text-anchor="middle">${measure[1]} ס״מ</text></g>`:`<text class="virtual-no-dim" x="${x+w/2}" y="${y+h/2+24}" text-anchor="middle">מידות לא מפורטות</text>`;
+  const dimensionLines=measure?`<g class="virtual-wall-measures" aria-hidden="true"><text x="${x+w/2}" y="${y+20}" text-anchor="middle">${measure[0]} ס״מ</text><text transform="translate(${x+w-20} ${y+h/2}) rotate(-90)" text-anchor="middle">${measure[1]} ס״מ</text></g>`:`<text class="virtual-no-dim" x="${x+w/2}" y="${y+h/2+24}" text-anchor="middle">מידות לא מפורטות</text>`;
   return `<g class="virtual-room" tabindex="0" role="button" aria-label="${label}" onclick="virtualChoose('${key}')" onkeydown="if(event.key==='Enter')virtualChoose('${key}')"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" class="${key==='dining'?'virtual-open-room':''}"/><text x="${x+w/2}" y="${y+h/2+4}" font-size="${fontSize}" text-anchor="middle">${name}</text>${dimensionLines}</g>`;
  }).join('');
  const outerMeasurements=floor?[[145,88,650,88,'551 + 185 + 55 (חזית)'],[680,115,680,690,'992 ס״מ (גובה כולל מסומן)']]:[[145,750,635,750,'791 ס״מ (רוחב כולל)'],[680,100,680,710,'1046 ס״מ (גובה כולל)']];
