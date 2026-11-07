@@ -377,6 +377,21 @@
     cacheTime = 0;
   }
 
+  // Refresh only the failed image's signed URL, rather than reloading the entire gallery.
+  async function refreshImageUrl(id) {
+    const item = cache?.find(x => x.id === id);
+    let path = item?.storagePath;
+    if (!path) {
+      const rows = await authRequest(BASE + '/rest/v1/renovation_media?select=storage_path&id=eq.' + encodeURIComponent(id) + '&limit=1');
+      path = rows?.[0]?.storage_path;
+    }
+    if (!path) throw Error('Image has no storage path');
+    const url = await signed(path);
+    if (item) item.image = url;
+    return url;
+  }
+  window.refreshCloudImageUrl = refreshImageUrl;
+
   window.dbAll = cloudAll;
   window.dbPut = cloudPut;
   window.dbDelete = cloudDelete;
