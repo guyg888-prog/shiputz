@@ -399,6 +399,26 @@
   window.dbAll = cloudAll;
   window.dbPut = cloudPut;
   window.dbDelete = cloudDelete;
+  // Record media changes only after successful cloud operations.
+  window.dbPut = async function(item){
+    const prior = await cloudAll().then(items=>items.find(x=>x.id===item.id)).catch(()=>null);
+    const result = await cloudPut(item);
+    if(typeof activityRecord==='function'){
+      activityRecord(prior?'edit':'create',item.kind||'inspo',item.title||'תמונה',prior?'תמונה או פרטים עודכנו':'תמונה נוספה',item.room||'');
+      save();
+    }
+    return result;
+  };
+  window.dbDelete = async function(id){
+    const prior = await cloudAll().then(items=>items.find(x=>x.id===id)).catch(()=>null);
+    const result = await cloudDelete(id);
+    if(prior&&typeof activityRecord==='function'){
+      activityRecord('delete',prior.kind||'inspo',prior.title||'תמונה','התמונה נמחקה',prior.room||'');
+      save();
+    }
+    return result;
+  };
+
 
   // Cloud status is logged instead of occupying the toast notification area.
   function status(message) {
