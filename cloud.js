@@ -207,6 +207,10 @@
     return BASE + '/storage/v1' + result.signedURL;
   }
 
+  const CURRENT_PHOTO_MARKER = 'shiputz:current-house-photo';
+  function decodeMediaKind(row) {
+    return row.kind === 'inspo' && row.source_url === CURRENT_PHOTO_MARKER ? 'current' : row.kind;
+  }
   async function cloudAll() {
     if (!session) return original.all();
 
@@ -219,7 +223,7 @@
     cache = await Promise.all(
       rows.map(async item => ({
         id: item.id,
-        kind: item.kind,
+        kind: decodeMediaKind(item),
         room: item.room || '',
         title: item.title || '',
         notes: item.notes || '',
@@ -316,11 +320,11 @@
 
     const row = {
       id,
-      kind: item.kind || 'inspo',
+      kind: item.kind === 'current' ? 'inspo' : (item.kind || 'inspo'),
       room: item.room || '',
       title: item.title || '',
       notes: item.notes || '',
-      source_url: item.url || '',
+      source_url: item.kind === 'current' ? CURRENT_PHOTO_MARKER : (item.url || ''),
       storage_path: path,
       updated_at: new Date().toISOString()
     };
