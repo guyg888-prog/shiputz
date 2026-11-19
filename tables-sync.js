@@ -55,6 +55,7 @@
   function apply(value) {
     if (!valid(value)) throw Error('נתוני הענן אינם תקינים');
     data = structuredClone(value);
+    if(typeof activityResetBaseline==='function')activityResetBaseline();
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     render();
   }
